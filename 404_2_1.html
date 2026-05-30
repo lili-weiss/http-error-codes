@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oje! 404 - Seite nicht gefunden</title>
+    <style>
+        /* Grundlegendes Styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Neuer, weicherer Pastell-Verlauf */
+            background: radial-gradient(circle at center, #e0f7fa 0%, #d1c4e9 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #334155;
+            overflow: hidden; /* Verhindert Scrollbalken durch fliegende Elemente */
+            position: relative;
+        }
+
+        /* --- HINTERGRUND-ELEMENTE --- */
+
+        /* Wolken-Styling */
+        .cloud {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 100px;
+            z-index: 1;
+            filter: blur(1px);
+        }
+
+        .cloud::after, .cloud::before {
+            content: '';
+            position: absolute;
+            background-color: inherit;
+            border-radius: 50%;
+        }
+
+        /* Verschiedene Wolkentypen und Animationen */
+        .cloud-1 {
+            width: 120px; height: 50px; top: 15%; left: -150px;
+            animation: cloud-drift-slow 35s linear infinite;
+            opacity: 0.8;
+        }
+        .cloud-1::after { width: 60px; height: 60px; top: -30px; left: 15px; }
+        .cloud-1::before { width: 50px; height: 50px; top: -20px; left: 60px; }
+
+        .cloud-2 {
+            width: 180px; height: 70px; top: 55%; right: -200px;
+            animation: cloud-drift-medium 25s linear infinite reverse;
+            opacity: 0.5;
+            filter: blur(2px);
+        }
+        .cloud-2::after { width: 90px; height: 90px; top: -50px; left: 30px; }
+        .cloud-2::before { width: 70px; height: 70px; top: -30px; left: 90px; }
+
+        .cloud-3 {
+            width: 80px; height: 35px; top: 75%; left: -100px;
+            animation: cloud-drift-fast 20s linear infinite;
+            opacity: 0.7;
+        }
+        .cloud-3::after { width: 40px; height: 40px; top: -20px; left: 10px; }
+        .cloud-3::before { width: 35px; height: 35px; top: -15px; left: 40px; }
+
+        /* Aufsteigende Traumblasen */
+        .dream-bubble {
+            position: absolute;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.1) 70%);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            z-index: 1;
+            opacity: 0;
+            animation: float-up-fade 10s ease-in infinite;
+        }
+
+        /* Kleine funkelnde Lichter */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: #fffde7;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 10px 2px #fffde7;
+            animation: sparkle-pulse 4s infinite;
+        }
+
+        /* --- HAUPTINHALT --- */
+
+        .error-container {
+            text-align: center;
+            position: relative;
+            z-index: 10; /* Über den Hintergrundelementen */
+            background-color: rgba(255, 255, 255, 0.4); /* Leichttransparenter Hintergrund für Textlesbarkeit */
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(5px); /* Unschärfe-Effekt für den Container-Hintergrund */
+        }
+
+        /* Das flauschige Monster (unverändert) */
+        .monster {
+            width: 200px;
+            height: 200px;
+            background-color: #ff99cc;
+            border-radius: 70% 30% 70% 30% / 30% 70% 30% 70%;
+            margin: 0 auto 30px auto;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(255, 153, 204, 0.4);
+            animation: monster-bob 4s ease-in-out infinite;
+        }
+
+        .eyes {
+            position: absolute;
+            top: 60px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .eye {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #333;
+        }
+
+        .pupil {
+            width: 20px;
+            height: 20px;
+            background-color: #333;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease-out;
+        }
+
+        .mouth {
+            width: 40px;
+            height: 20px;
+            border: 4px solid #333;
+            border-bottom: 0;
+            border-radius: 50px 50px 0 0;
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .shadow {
+            width: 150px;
+            height: 20px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            margin: -15px auto 30px auto;
+            animation: shadow-pulse 4s ease-in-out infinite;
+        }
+
+        /* Text Styling (unverändert) */
+        h1 {
+            font-size: 6rem;
+            margin: 0;
+            color: #ff99cc;
+            text-shadow: 2px 2px 0px white;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: -10px 0 15px 0;
+        }
+
+        p {
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto 30px auto;
+            line-height: 1.5;
+            color: #64748b;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            color: white;
+            background-color: #ff99cc;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 5px 10px rgba(255, 153, 204, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #ff80bf;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(255, 153, 204, 0.4);
+        }
+
+        /* --- KEYFRAMES ANIMATIONS --- */
+
+        /* Monster & Schatten */
+        @keyframes monster-bob {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes shadow-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.1; }
+            50% { transform: scale(0.8); opacity: 0.05; }
+        }
+
+        /* Wolken-Drift (verschiedene Geschwindigkeiten) */
+        @keyframes cloud-drift-slow {
+            0% { transform: translateX(-10vw); }
+            100% { transform: translateX(120vw); }
+        }
+        @keyframes cloud-drift-medium {
+            0% { transform: translateX(10vw); }
+            100% { transform: translateX(-120vw); }
+        }
+        @keyframes cloud-drift-fast {
+            0% { transform: translateX(-20vw); }
+            100% { transform: translateX(130vw); }
+        }
+
+        /* Aufsteigende Blasen */
+        @keyframes float-up-fade {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) scale(1.2); opacity: 0; }
+        }
+
+        /* Funkelnde Lichter */
+        @keyframes sparkle-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.2; }
+            50% { transform: scale(1.5); opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+
+    <div class="dream-bubble" style="width: 20px; height: 20px; left: 15%; animation-delay: 0s;"></div>
+    <div class="dream-bubble" style="width: 35px; height: 35px; left: 40%; animation-delay: 2s;"></div>
+    <div class="dream-bubble" style="width: 25px; height: 25px; left: 65%; animation-delay: 5s;"></div>
+    <div class="dream-bubble" style="width: 45px; height: 45px; left: 80%; animation-delay: 1s;"></div>
+    <div class="dream-bubble" style="width: 15px; height: 15px; left: 90%; animation-delay: 7s;"></div>
+
+    <div class="sparkle" style="top: 20%; left: 25%; animation-delay: 0s;"></div>
+    <div class="sparkle" style="top: 40%; left: 10%; animation-delay: 1s;"></div>
+    <div class="sparkle" style="top: 15%; left: 75%; animation-delay: 2s;"></div>
+    <div class="sparkle" style="top: 60%; left: 85%; animation-delay: 1.5s;"></div>
+    <div class="sparkle" style="top: 80%; left: 50%; animation-delay: 3s;"></div>
+
+
+    <div class="error-container">
+        <h1>404</h1>
+        
+        <div class="monster">
+            <div class="eyes">
+                <div class="eye"><div class="pupil" id="pupil-left"></div></div>
+                <div class="eye"><div class="pupil" id="pupil-right"></div></div>
+            </div>
+            <div class="mouth"></div>
+        </div>
+        <div class="shadow"></div>
+
+        <h2>Oje! Verirrt?</h2>
+        <p>Unser kleines Such-Monster hat überall gesucht, aber diese Seite scheint einfach unauffindbar zu sein. Vielleicht hat sie sich versteckt?</p>
+        
+        <a href="/" class="btn">Bring mich nach Hause</a>
+    </div>
+
+    <script>
+        // -- JavaScript für die Augen-Bewegung (unverändert) --
+        const pupilLeft = document.getElementById('pupil-left');
+        const pupilRight = document.getElementById('pupil-right');
+
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+
+            const offsetX = (mouseX / windowWidth) * 2 - 1;
+            const offsetY = (mouseY / windowHeight) * 2 - 1;
+
+            const maxMove = 10; 
+
+            const moveX = offsetX * maxMove;
+            const moveY = offsetY * maxMove;
+
+            const transformString = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
+            
+            pupilLeft.style.transform = transformString;
+            pupilRight.style.transform = transformString;
+        });
+    </script>
+</body>
+</html>

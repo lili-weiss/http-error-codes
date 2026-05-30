@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoLili Link Shortener</title>
+</head>
+<body>
+	<div id="content-container">
+        <div id="error-container">
+            <h1>GoLili Link Shortener</h1>
+		    <h2>Sorry, the link <span id="link"></span> does not exist.</h2>
+            <p>Perhaps you made a typo when entering the link? If not, please contact the person who gave you this link 
+                or the owner of the website where you found it.</p>
+            <p class="note">Note: If you can see this page, it means the site is working fine. It's just that the link you entered is not valid.</p>
+        </div>
+	</div>
+</body>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    #content-container {
+        text-align: center;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: -35%;
+    }
+
+    #error-container h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+
+    #error-container h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    #link {
+        color: #007BFF;
+    }
+
+    #error-container p {
+        font-size: 1.2em;
+        max-width: 600px;
+    }
+
+    #error-container p.note {
+        font-size: 0.9em;
+        margin-top: 30px;
+        font-style: italic;
+        color: #555;
+    }
+</style>
+
+<script>
+    const YOURLS_SITE = 'https://goli.li';
+    const keyword = 'bla';
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const linkElement = document.getElementById('link');
+        linkElement.textContent = YOURLS_SITE + '/' + keyword;
+    });
+</script>
+</html>
