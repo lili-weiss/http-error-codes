@@ -10,15 +10,32 @@
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            min-height: 100%;
             background: radial-gradient(circle at center, #e0f7fa 0%, #d1c4e9 100%);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #334155;
-            overflow: hidden;
             position: relative;
+        }
+
+        .background-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none; /* Klicks gehen durch den Hintergrund hindurch */
+        }
+
+        .main-wrapper {
+            position: relative;
+            z-index: 10;
+            /* 160px Padding oben ist extrem wichtig, damit das Paket nicht abgeschnitten wird! */
+            padding: 10px 20px 10px 20px; 
+            width: 100%;
+            min-height: 100vh;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Oben andocken, nicht in der Mitte */
         }
 
         /* --- HINTERGRUND-ELEMENTE --- */
@@ -220,52 +237,56 @@
 </head>
 <body>
 
-    <div class="cloud cloud-1"></div>
-    <div class="cloud cloud-2"></div>
-    <div class="cloud cloud-3"></div>
-    <div class="sparkle" style="top: 20%; left: 25%; animation-delay: 0s;"></div>
-    <div class="sparkle" style="top: 40%; left: 10%; animation-delay: 1s;"></div>
-    <div class="sparkle" style="top: 15%; left: 75%; animation-delay: 2s;"></div>
-    <div class="sparkle" style="top: 60%; left: 85%; animation-delay: 1.5s;"></div>
-    <div class="sparkle" style="top: 80%; left: 50%; animation-delay: 3s;"></div>
+    <div class="background-container">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+        <div class="sparkle" style="top: 20%; left: 25%; animation-delay: 0s;"></div>
+        <div class="sparkle" style="top: 40%; left: 10%; animation-delay: 1s;"></div>
+        <div class="sparkle" style="top: 15%; left: 75%; animation-delay: 2s;"></div>
+        <div class="sparkle" style="top: 60%; left: 85%; animation-delay: 1.5s;"></div>
+        <div class="sparkle" style="top: 80%; left: 50%; animation-delay: 3s;"></div>
+    
+        <div class="envelope" style="left: 10%; animation-duration: 4s; animation-delay: 0s;"></div>
+        <div class="envelope" style="left: 25%; animation-duration: 5s; animation-delay: 2s;"></div>
+        <div class="envelope" style="left: 45%; animation-duration: 3.5s; animation-delay: 1s;"></div>
+        <div class="envelope" style="left: 70%; animation-duration: 4.5s; animation-delay: 3s;"></div>
+        <div class="envelope" style="left: 85%; animation-duration: 6s; animation-delay: 0.5s;"></div>
+        <div class="envelope" style="left: 15%; animation-duration: 4.2s; animation-delay: 4s;"></div>
+        <div class="envelope" style="left: 60%; animation-duration: 5.5s; animation-delay: 2.5s;"></div>
+    </div>
 
-    <div class="envelope" style="left: 10%; animation-duration: 4s; animation-delay: 0s;"></div>
-    <div class="envelope" style="left: 25%; animation-duration: 5s; animation-delay: 2s;"></div>
-    <div class="envelope" style="left: 45%; animation-duration: 3.5s; animation-delay: 1s;"></div>
-    <div class="envelope" style="left: 70%; animation-duration: 4.5s; animation-delay: 3s;"></div>
-    <div class="envelope" style="left: 85%; animation-duration: 6s; animation-delay: 0.5s;"></div>
-    <div class="envelope" style="left: 15%; animation-duration: 4.2s; animation-delay: 4s;"></div>
-    <div class="envelope" style="left: 60%; animation-duration: 5.5s; animation-delay: 2.5s;"></div>
-
-    <div class="error-container">
-        <h1>429</h1>
-        
-        <div class="monster">
-            <div class="sweat-drop"></div>
-
-            <div class="eyes">
-                <div class="eye"><div class="pupil" id="pupil-left"></div></div>
-                <div class="eye"><div class="pupil" id="pupil-right"></div></div>
-            </div>
+    <div class="main-wrapper">
+        <div class="error-container">
+            <h1>429</h1>
             
-            <div class="mouth"></div>
-            
-            <div class="hand hand-left"></div>
-            <div class="hand hand-right">
-                <div class="stopwatch">
-                    <div class="stopwatch-button"></div>
-                    <div class="stopwatch-body"></div>
+            <div class="monster">
+                <div class="sweat-drop"></div>
+    
+                <div class="eyes">
+                    <div class="eye"><div class="pupil" id="pupil-left"></div></div>
+                    <div class="eye"><div class="pupil" id="pupil-right"></div></div>
+                </div>
+                
+                <div class="mouth"></div>
+                
+                <div class="hand hand-left"></div>
+                <div class="hand hand-right">
+                    <div class="stopwatch">
+                        <div class="stopwatch-button"></div>
+                        <div class="stopwatch-body"></div>
+                    </div>
                 </div>
             </div>
+            <div class="shadow"></div>
+    
+            <h2>Langsam, langsam!</h2>
+            <p>Unser kleines Monster wird gerade mit Anfragen regelrecht bombardiert und kommt mit dem Abarbeiten gar nicht mehr hinterher. Gib ihm eine kleine Pause!</p>
+            
+            <a href="javascript:location.reload();" class="btn">Kurz durchatmen & neu laden</a>
+            
+            <a class="info-link" id="openModalBtn">Warum bin ich geblockt?</a>
         </div>
-        <div class="shadow"></div>
-
-        <h2>Langsam, langsam!</h2>
-        <p>Unser kleines Monster wird gerade mit Anfragen regelrecht bombardiert und kommt mit dem Abarbeiten gar nicht mehr hinterher. Gib ihm eine kleine Pause!</p>
-        
-        <a href="javascript:location.reload();" class="btn">Kurz durchatmen & neu laden</a>
-        
-        <a class="info-link" id="openModalBtn">Warum bin ich geblockt?</a>
     </div>
 
     <div class="modal-overlay" id="infoModal">
