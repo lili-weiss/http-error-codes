@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abwarten und Tee trinken! 418 - I'm a Teapot</title>
+    <title><!-- ERROR TITLE --></title>
     <style>
         /* Grundlegendes Styling */
         body, html {
@@ -55,15 +55,14 @@
         .eye { width: 40px; height: 40px; background-color: white; border-radius: 50%; position: relative; overflow: hidden; border: 2px solid #333; }
         .pupil { width: 20px; height: 20px; background-color: #333; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); transition: transform 0.1s ease-out; }
         
-        /* Glückliches Lächeln für die Tee-Zeit */
+        /* Strenger Mund für das Wächter-Monster */
         .mouth { 
-            width: 30px; 
-            height: 15px; 
-            border: 4px solid #333; 
-            border-top: 0; /* Oben offen für Lächeln */
-            border-radius: 0 0 50px 50px; 
+            width: 25px; 
+            height: 0px; 
+            border: 3px solid #333; 
+            border-radius: 10px; 
             position: absolute; 
-            bottom: 40px; 
+            bottom: 45px; 
             left: 50%; 
             transform: translateX(-50%); 
         }
@@ -84,94 +83,115 @@
         .hand-left { left: -15px; }
         .hand-right { right: -15px; }
 
-        /* --- NEUES ELEMENT: Teekanne --- */
-        .teapot {
-            position: absolute;
-            width: 45px;
-            height: 35px;
-            background-color: #81d4fa; /* Hellblau */
-            border-radius: 20px 20px 10px 10px;
-            top: -25px;
-            left: -15px;
-            z-index: 12;
-            box-shadow: inset -5px -5px 10px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        /* Ausguss der Teekanne */
-        .teapot::before {
-            content: '';
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            border: 5px solid #81d4fa;
-            border-top: transparent;
-            border-right: transparent;
-            border-radius: 0 0 0 15px;
-            top: 8px;
-            left: -12px;
-            transform: rotate(15deg);
-        }
-
-        /* Griff der Teekanne */
-        .teapot::after {
-            content: '';
-            position: absolute;
-            width: 15px;
-            height: 20px;
-            border: 5px solid #81d4fa;
-            border-left: transparent;
-            border-radius: 0 15px 15px 0;
-            top: 5px;
-            right: -15px;
-        }
-
-        /* Deckel der Teekanne */
-        .teapot-lid {
-            position: absolute;
-            width: 26px;
-            height: 10px;
-            background-color: #4fc3f7;
-            border-radius: 15px 15px 0 0;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* Knauf auf dem Deckel */
-        .teapot-lid::before {
-            content: '';
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background-color: #0288d1;
-            border-radius: 50%;
-            top: -6px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        /* Animierter Dampf aus der Teekanne */
-        .steam {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            top: 0px;
-            left: -15px;
-            filter: blur(2px);
-            opacity: 0;
-            animation: steam-rise 2s infinite ease-out;
-        }
-
         /* --- RESTLICHE ANIMATIONEN & STYLING --- */
         .shadow { width: 150px; height: 20px; background-color: rgba(0, 0, 0, 0.1); border-radius: 50%; margin: -15px auto 30px auto; animation: shadow-pulse 4s ease-in-out infinite; }
         h1 { font-size: 6rem; margin: 0; color: #ff99cc; text-shadow: 2px 2px 0px white; }
         h2 { font-size: 2rem; margin: -10px 0 15px 0; }
         p { font-size: 1.1rem; max-width: 500px; margin: 0 auto 30px auto; line-height: 1.5; color: #64748b; }
-        .btn { display: inline-block; padding: 12px 30px; font-size: 1.1rem; color: white; background-color: #ff99cc; border: none; border-radius: 50px; text-decoration: none; font-weight: bold; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 5px 10px rgba(255, 153, 204, 0.3); }
+        .btn { display: inline-block; padding: 12px 30px; font-size: 1.1rem; color: white; background-color: #ff99cc; border: none; border-radius: 50px; text-decoration: none; font-weight: bold; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 5px 10px rgba(255, 153, 204, 0.3); margin-bottom: 15px; }
         .btn:hover { background-color: #ff80bf; transform: translateY(-2px); box-shadow: 0 8px 15px rgba(255, 153, 204, 0.4); }
 
+        /* --- NEU: Info-Link --- */
+        .info-link {
+            display: block;
+            font-size: 0.95rem;
+            color: #94a3b8;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        .info-link:hover {
+            color: #ff99cc;
+        }
+
+        /* --- NEU: Modal Styling --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(30, 41, 59, 0.4); /* Dunkles, halbtransparentes Overlay */
+            backdrop-filter: blur(8px); /* Verschwommener Hintergrund */
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none; /* Verhindert Klicks, wenn unsichtbar */
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 25px;
+            max-width: 450px;
+            width: 85%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transform: translateY(30px);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Federnde Animation */
+            text-align: left;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #94a3b8;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: #ff4d4f;
+        }
+
+        .modal-content h3 {
+            color: #ff99cc;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .modal-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0 0 15px 0;
+            color: #475569;
+        }
+
+        .modal-content ul {
+            color: #475569;
+            margin-bottom: 25px;
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+
+        .modal-content li {
+            margin-bottom: 8px;
+        }
+
+        .modal-content strong {
+            color: #334155;
+        }
+
+        /* KEYFRAMES ANIMATIONS */
         @keyframes monster-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
         @keyframes shadow-pulse { 0%, 100% { transform: scale(1); opacity: 0.1; } 50% { transform: scale(0.8); opacity: 0.05; } }
         @keyframes cloud-drift-slow { 0% { transform: translateX(-10vw); } 100% { transform: translateX(120vw); } }
@@ -179,7 +199,6 @@
         @keyframes cloud-drift-fast { 0% { transform: translateX(-20vw); } 100% { transform: translateX(130vw); } }
         @keyframes float-up-fade { 0% { transform: translateY(100vh) scale(0.5); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(-100px) scale(1.2); opacity: 0; } }
         @keyframes sparkle-pulse { 0%, 100% { transform: scale(1); opacity: 0.2; } 50% { transform: scale(1.5); opacity: 1; } }
-        @keyframes steam-rise { 0% { transform: translateY(0) scale(1); opacity: 0.8; } 100% { transform: translateY(-30px) scale(2.5); opacity: 0; } }
 
     </style>
 </head>
@@ -200,41 +219,56 @@
     <div class="sparkle" style="top: 80%; left: 50%; animation-delay: 3s;"></div>
 
     <div class="error-container">
-        <h1>418</h1>
+        <h1><!-- ERROR CODE --></h1>
         
         <div class="monster">
             <div class="eyes">
                 <div class="eye"><div class="pupil" id="pupil-left"></div></div>
                 <div class="eye"><div class="pupil" id="pupil-right"></div></div>
             </div>
-            
             <div class="mouth"></div>
             
             <div class="hand hand-left"></div>
             <div class="hand hand-right">
-                <div class="teapot">
-                    <div class="teapot-lid"></div>
-                    <div class="steam"></div>
-                </div>
+                <!-- HIER HANDINHALT VON MONSTER -->
             </div>
         </div>
         <div class="shadow"></div>
 
-        <h2>I'm a Teapot!</h2>
-        <p>Du wolltest eigentlich Kaffee kochen, aber unser kleines Monster ist heute eine Teekanne! Lehn dich zurück, entspann dich und genieße eine herrliche, virtuelle Tasse Earl Grey.</p>
+        <h2><!-- FEHLERMELDUNG --></h2>
+        <p><!-- FEHLERBESCHREIBUNG --></p>
         
-        <a href="/" class="btn">Teezeit beenden</a>
+        <a href="/" class="btn"><!-- BUTTON TEXT --></a>
+        
+        <a class="info-link" id="openModalBtn"><!-- INFO LINK TEXT --></a>
+    </div>
+
+    <div class="modal-overlay" id="infoModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModalBtn">&times;</button>
+            <!-- MODAL CONTENT
+            
+            <h3>Was bedeutet "403 Forbidden"?</h3>
+            <p>Ein 403-Fehler bedeutet, dass der Server deine Anfrage zwar verstanden hat, dir aber den Zugriff verweigert. Das kann verschiedene Gründe haben:</p>
+            <ul>
+                <li>Du bist <strong>nicht angemeldet</strong> oder verwendest das falsche Konto.</li>
+                <li>Dir fehlen die nötigen <strong>Berechtigungen</strong> (z.B. Admin-Rechte) für diese spezifische Seite.</li>
+                <li>Deine IP-Adresse wurde aus Sicherheitsgründen blockiert.</li>
+            </ul>
+            <p><strong>Was kannst du tun?</strong><br>
+            Überprüfe zunächst, ob du korrekt eingeloggt bist. Wenn du dir sicher bist, dass du eigentlich Zugriff haben solltest, wende dich am besten direkt an den Administrator der Website.</p>
+            -->
+        </div>
     </div>
 
     <script>
-        // JavaScript für die Augen-Bewegung bleibt exakt gleich!
+        // JavaScript für die Augen-Bewegung
         const pupilLeft = document.getElementById('pupil-left');
         const pupilRight = document.getElementById('pupil-right');
 
         document.addEventListener('mousemove', (e) => {
             const mouseX = e.clientX;
             const mouseY = e.clientY;
-
             const windowWidth = window.innerWidth;
             const windowHeight = window.innerHeight;
 
@@ -242,7 +276,6 @@
             const offsetY = (mouseY / windowHeight) * 2 - 1;
 
             const maxMove = 10; 
-
             const moveX = offsetX * maxMove;
             const moveY = offsetY * maxMove;
 
@@ -250,6 +283,28 @@
             
             pupilLeft.style.transform = transformString;
             pupilRight.style.transform = transformString;
+        });
+
+        // --- NEU: JavaScript für das Modal ---
+        const modal = document.getElementById('infoModal');
+        const openBtn = document.getElementById('openModalBtn');
+        const closeBtn = document.getElementById('closeModalBtn');
+
+        // Modal öffnen
+        openBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+        });
+
+        // Modal schließen (Klick auf X)
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        // Modal schließen (Klick außerhalb der Box auf den dunklen Hintergrund)
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
         });
     </script>
 </body>

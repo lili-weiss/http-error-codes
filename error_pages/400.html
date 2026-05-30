@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oopsy! 500 - Server-Schluckauf</title>
+    <title>Huch! 400 - Bad Request</title>
     <style>
         /* Grundlegendes Styling */
         body, html {
@@ -55,14 +55,15 @@
         .eye { width: 40px; height: 40px; background-color: white; border-radius: 50%; position: relative; overflow: hidden; border: 2px solid #333; }
         .pupil { width: 20px; height: 20px; background-color: #333; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); transition: transform 0.1s ease-out; }
         
-        /* Strenger Mund für das Wächter-Monster */
+        /* Verwirrter "O"-Mund */
         .mouth { 
-            width: 25px; 
-            height: 0px; 
-            border: 3px solid #333; 
-            border-radius: 10px; 
+            width: 15px; 
+            height: 15px; 
+            border: 4px solid #333; 
+            border-radius: 50%; /* Runder Mund */
+            background-color: transparent;
             position: absolute; 
-            bottom: 45px; 
+            bottom: 40px; 
             left: 50%; 
             transform: translateX(-50%); 
         }
@@ -83,51 +84,143 @@
         .hand-left { left: -15px; }
         .hand-right { right: -15px; }
 
-        .wrench {
+        /* --- NEUES ELEMENT: Fragezeichen-Schild --- */
+        .question-sign {
             position: absolute;
-            top: 25%;
-            left: -75%;
-            transform: translate(-50%, -50%) rotate(-10deg);
-            z-index: 12;
-            width: 60px;
-            height: 15px;
-            display: flex;
-            align-items: center;
-            transform: rotate(180deg);
-        }
-
-        /* Holzgriff */
-        .wrench-handle {
             width: 45px;
-            height: 10px;
-            background-color: #8d6e63; /* Holzbraun */
-            border-radius: 5px;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        /* Metallkopf (senkrecht zum Griff) */
-        .wrench-head {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
-            background-color: #90a4ae; /* Metallgrau */
-            border-radius: 5px;
+            height: 45px;
+            background-color: #ffb300; /* Warmes Gelb-Orange für "Achtung/Verwirrung" */
+            border-radius: 8px; /* Leicht eckiges Schild */
+            border: 3px solid white;
+            top: -55px; /* Schwebt über der Hand */
+            left: -10px;
+            z-index: 12;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
         }
 
-        /* Gabelform */
-        .wrench-head::after {
+        /* Das Fragezeichen im Schild */
+        .question-sign::before {
+            content: '?';
+        }
+
+        /* Der Holzstab des Schildes (orthogonal) */
+        .question-sign::after {
             content: '';
-            width: 8px;
-            height: 14px;
-            background-color: #ff99cc; 
-            border-radius: 2px;
+            position: absolute;
+            width: 6px;
+            height: 40px;
+            background-color: #8d6e63;
+            border-radius: 3px;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+
+        /* --- NEU: Info-Link --- */
+        .info-link {
+            display: block;
+            font-size: 0.95rem;
+            color: #94a3b8;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        .info-link:hover {
+            color: #ff99cc;
+        }
+
+        /* --- NEU: Modal Styling --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(30, 41, 59, 0.4); /* Dunkles, halbtransparentes Overlay */
+            backdrop-filter: blur(8px); /* Verschwommener Hintergrund */
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none; /* Verhindert Klicks, wenn unsichtbar */
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 25px;
+            max-width: 450px;
+            width: 85%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transform: translateY(30px);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Federnde Animation */
+            text-align: left;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: #94a3b8;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .modal-close:hover {
+            color: #ff4d4f;
+        }
+
+        .modal-content h3 {
+            color: #ff99cc;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .modal-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0 0 15px 0;
+            color: #475569;
+        }
+
+        .modal-content ul {
+            color: #475569;
+            margin-bottom: 25px;
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+
+        .modal-content li {
+            margin-bottom: 8px;
+        }
+
+        .modal-content strong {
+            color: #334155;
         }
 
         /* --- RESTLICHE ANIMATIONEN & STYLING --- */
@@ -135,7 +228,7 @@
         h1 { font-size: 6rem; margin: 0; color: #ff99cc; text-shadow: 2px 2px 0px white; }
         h2 { font-size: 2rem; margin: -10px 0 15px 0; }
         p { font-size: 1.1rem; max-width: 500px; margin: 0 auto 30px auto; line-height: 1.5; color: #64748b; }
-        .btn { display: inline-block; padding: 12px 30px; font-size: 1.1rem; color: white; background-color: #ff99cc; border: none; border-radius: 50px; text-decoration: none; font-weight: bold; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 5px 10px rgba(255, 153, 204, 0.3); }
+        .btn { display: inline-block; padding: 12px 30px; font-size: 1.1rem; color: white; background-color: #ff99cc; border: none; border-radius: 50px; text-decoration: none; font-weight: bold; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 5px 10px rgba(255, 153, 204, 0.3); margin-bottom: 15px; }
         .btn:hover { background-color: #ff80bf; transform: translateY(-2px); box-shadow: 0 8px 15px rgba(255, 153, 204, 0.4); }
 
         @keyframes monster-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
@@ -165,30 +258,43 @@
     <div class="sparkle" style="top: 80%; left: 50%; animation-delay: 3s;"></div>
 
     <div class="error-container">
-        <h1>500</h1>
+        <h1>400</h1>
         
         <div class="monster">
             <div class="eyes">
                 <div class="eye"><div class="pupil" id="pupil-left"></div></div>
                 <div class="eye"><div class="pupil" id="pupil-right"></div></div>
             </div>
+            
             <div class="mouth"></div>
             
             <div class="hand hand-left"></div>
             <div class="hand hand-right">
-                <div class="wrench">
-                    <div class="wrench-handle"></div>
-                    <div class="wrench-head"></div>
-                </div>
+                <div class="question-sign"></div>
             </div>
         </div>
         <div class="shadow"></div>
 
-        <h2>Oopsy! Ein kleiner Defekt</h2>
-        <p>Hoppla, es scheint, als hätte unser Server einen kleinen Schluckauf bekommen. 
-            Unser kleines Monster hat vielleicht ein bisschen zu viel an den Kabeln gezogen? Wir sind schon am Tüfteln!</p>
+        <h2>Huch? Was war das?</h2>
+        <p>Unser kleines Monster kratzt sich verwirrt am Kopf. Deine Anfrage war leider fehlerhaft oder für uns völlig unverständlich. Da passt wohl irgendetwas nicht zusammen!</p>
         
-        <a href="/" class="btn">Zurück ins sichere Gebiet</a>
+        <a href="/" class="btn">Versuch es nochmal</a>
+        <a class="info-link" id="openModalBtn">Was bedeutet 400?</a>
+    </div>
+
+    <div class="modal-overlay" id="infoModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModalBtn">&times;</button>
+            <h3>Was bedeutet "400 Bad Request"?</h3>
+            <p>Ein 400-Fehler bedeutet, dass der Server deine Anfrage nicht verarbeiten konnte. Das kann verschiedene Gründe haben:</p>
+            <ul>
+                <li>Die Anfrage enthielt Syntaxfehler.</li>
+                <li>Die Anfrage war zu groß oder enthielt ungültige Daten.</li>
+                <li>Der Server konnte die Anfrage nicht verstehen.</li>
+            </ul>
+            <p><strong>Was kannst du tun?</strong><br>
+            Überprüfe die URL auf Tippfehler, lösche eventuell fehlerhafte Cookies oder versuche es später nochmal. Wenn du denkst, dass alles korrekt ist, könnte es auch ein Problem auf unserer Seite sein - in diesem Fall entschuldigen wir uns und arbeiten daran, es zu beheben!</p>
+        </div>
     </div>
 
     <script>
@@ -215,6 +321,27 @@
             
             pupilLeft.style.transform = transformString;
             pupilRight.style.transform = transformString;
+        });
+
+        const modal = document.getElementById('infoModal');
+        const openBtn = document.getElementById('openModalBtn');
+        const closeBtn = document.getElementById('closeModalBtn');
+
+        // Modal öffnen
+        openBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+        });
+
+        // Modal schließen (Klick auf X)
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        // Modal schließen (Klick außerhalb der Box auf den dunklen Hintergrund)
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
         });
     </script>
 </body>
