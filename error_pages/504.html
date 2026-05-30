@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeit abgelaufen! 504 - Gateway Timeout</title>
+    <style>
+        /* Grundlegendes Styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at center, #e0f7fa 0%, #d1c4e9 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #334155;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* --- HINTERGRUND-ELEMENTE --- */
+        .cloud { position: absolute; background-color: rgba(255, 255, 255, 0.6); border-radius: 100px; z-index: 1; filter: blur(1px); }
+        .cloud::after, .cloud::before { content: ''; position: absolute; background-color: inherit; border-radius: 50%; }
+        .cloud-1 { width: 120px; height: 50px; top: 15%; left: -150px; animation: cloud-drift-slow 35s linear infinite; opacity: 0.8; }
+        .cloud-1::after { width: 60px; height: 60px; top: -30px; left: 15px; }
+        .cloud-1::before { width: 50px; height: 50px; top: -20px; left: 60px; }
+        .cloud-2 { width: 180px; height: 70px; top: 55%; right: -200px; animation: cloud-drift-medium 25s linear infinite reverse; opacity: 0.5; filter: blur(2px); }
+        .cloud-2::after { width: 90px; height: 90px; top: -50px; left: 30px; }
+        .cloud-2::before { width: 70px; height: 70px; top: -30px; left: 90px; }
+        .cloud-3 { width: 80px; height: 35px; top: 75%; left: -100px; animation: cloud-drift-fast 20s linear infinite; opacity: 0.7; }
+        .cloud-3::after { width: 40px; height: 40px; top: -20px; left: 10px; }
+        .cloud-3::before { width: 35px; height: 35px; top: -15px; left: 40px; }
+        .dream-bubble { position: absolute; background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.1) 70%); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50%; z-index: 1; opacity: 0; animation: float-up-fade 10s ease-in infinite; }
+        .sparkle { position: absolute; width: 4px; height: 4px; background-color: #fffde7; border-radius: 50%; z-index: 1; box-shadow: 0 0 10px 2px #fffde7; animation: sparkle-pulse 4s infinite; }
+
+        /* --- HAUPTINHALT --- */
+        .error-container { text-align: center; position: relative; z-index: 10; background-color: rgba(255, 255, 255, 0.4); padding: 40px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); backdrop-filter: blur(5px); }
+
+        /* Monster-Styling */
+        .monster {
+            width: 200px;
+            height: 200px;
+            background-color: #ff99cc;
+            border-radius: 70% 30% 70% 30% / 30% 70% 30% 70%;
+            margin: 0 auto 30px auto;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(255, 153, 204, 0.4);
+            animation: monster-bob 4s ease-in-out infinite;
+        }
+
+        /* Augen */
+        .eyes { position: absolute; top: 60px; width: 100%; display: flex; justify-content: center; gap: 20px; }
+        .eye { width: 40px; height: 40px; background-color: white; border-radius: 50%; position: relative; overflow: hidden; border: 2px solid #333; }
+        .pupil { width: 20px; height: 20px; background-color: #333; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); transition: transform 0.1s ease-out; }
+        
+        /* NEU: Gelangweilte Augenlider, die von oben ins Auge ragen */
+        .eyelid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 18px;
+            background-color: #ff99cc; /* Gleiche Farbe wie das Monster */
+            border-bottom: 3px solid #333;
+            z-index: 2;
+        }
+
+        /* Gelangweilter, gerader Mund */
+        .mouth { 
+            width: 25px; 
+            height: 0px; 
+            border: 3px solid #333; 
+            border-radius: 10px; 
+            position: absolute; 
+            bottom: 45px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+        }
+
+        /* Hände */
+        .hand {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #ff99cc;
+            border-radius: 50%;
+            border: 2px solid rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 13;
+        }
+
+        .hand-left { top: 110px; left: -15px; }
+        .hand-right { top: 110px; right: -15px; }
+
+        /* --- NEUES KOMPAKTES ELEMENT: Die Sanduhr (Hourglass) --- */
+        .hourglass {
+            position: absolute;
+            top: -65px; /* Schwebt über der rechten Hand */
+            left: -10px;
+            width: 40px;
+            height: 65px;
+            z-index: 15;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Holzrahmen oben und unten */
+        .hg-wood {
+            width: 40px;
+            height: 6px;
+            background-color: #8d6e63;
+            border-radius: 3px;
+            border: 1px solid #5d4037;
+            z-index: 2;
+        }
+
+        /* Das Glas der Sanduhr */
+        .hg-glass-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: -2px;
+            margin-bottom: -2px;
+        }
+
+        .hg-glass-top, .hg-glass-bottom {
+            width: 30px;
+            height: 25px;
+            background-color: rgba(255, 255, 255, 0.4);
+            border: 2px solid #b0bec5;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset -3px -3px 5px rgba(255,255,255,0.6);
+        }
+
+        .hg-glass-top {
+            border-radius: 5px 5px 15px 15px;
+            border-bottom: none;
+        }
+
+        .hg-glass-bottom {
+            border-radius: 15px 15px 5px 5px;
+            border-top: none;
+        }
+
+        /* Der Sand unten (fast voll) */
+        .hg-sand-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 85%;
+            background-color: #fcd34d; /* Gelber Sand */
+            border-radius: 0 0 3px 3px;
+        }
+
+        /* Der fallende Sand (Animation) */
+        .hg-sand-stream {
+            position: absolute;
+            width: 2px;
+            height: 30px;
+            background-color: #fcd34d;
+            top: 25px; /* Startet an der Engstelle */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            animation: sand-fall 1.5s infinite linear;
+        }
+
+        /* --- RESTLICHE ANIMATIONEN & STYLING --- */
+        .shadow { width: 150px; height: 20px; background-color: rgba(0, 0, 0, 0.1); border-radius: 50%; margin: -15px auto 30px auto; animation: shadow-pulse 4s ease-in-out infinite; }
+        h1 { font-size: 6rem; margin: 0; color: #ff99cc; text-shadow: 2px 2px 0px white; }
+        h2 { font-size: 2rem; margin: -10px 0 15px 0; }
+        p { font-size: 1.1rem; max-width: 500px; margin: 0 auto 30px auto; line-height: 1.5; color: #64748b; }
+        .btn { display: inline-block; padding: 12px 30px; font-size: 1.1rem; color: white; background-color: #ff99cc; border: none; border-radius: 50px; text-decoration: none; font-weight: bold; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 5px 10px rgba(255, 153, 204, 0.3); margin-bottom: 15px; }
+        .btn:hover { background-color: #ff80bf; transform: translateY(-2px); box-shadow: 0 8px 15px rgba(255, 153, 204, 0.4); }
+
+        /* Info-Link & Modal */
+        .info-link { display: block; font-size: 0.95rem; color: #94a3b8; text-decoration: underline; cursor: pointer; transition: color 0.2s ease; }
+        .info-link:hover { color: #ff99cc; }
+        
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(30, 41, 59, 0.4); backdrop-filter: blur(8px); z-index: 1000; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .modal-overlay.active { opacity: 1; pointer-events: all; }
+        .modal-content { background-color: rgba(255, 255, 255, 0.9); padding: 40px; border-radius: 25px; max-width: 450px; width: 85%; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); position: relative; transform: translateY(30px); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-align: left; }
+        .modal-overlay.active .modal-content { transform: translateY(0); }
+        .modal-close { position: absolute; top: 20px; right: 25px; background: none; border: none; font-size: 2rem; color: #94a3b8; cursor: pointer; transition: color 0.2s ease; padding: 0; line-height: 1; }
+        .modal-close:hover { color: #ff4d4f; }
+        .modal-content h3 { color: #ff99cc; font-size: 1.5rem; margin-top: 0; margin-bottom: 15px; }
+        .modal-content p { font-size: 1rem; line-height: 1.6; margin: 0 0 15px 0; color: #475569; }
+        .modal-content ul { color: #475569; margin-bottom: 25px; padding-left: 20px; line-height: 1.6; }
+        .modal-content li { margin-bottom: 8px; }
+        .modal-content strong { color: #334155; }
+
+        /* Keyframes */
+        @keyframes monster-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        @keyframes shadow-pulse { 0%, 100% { transform: scale(1); opacity: 0.1; } 50% { transform: scale(0.8); opacity: 0.05; } }
+        @keyframes cloud-drift-slow { 0% { transform: translateX(-10vw); } 100% { transform: translateX(120vw); } }
+        @keyframes cloud-drift-medium { 0% { transform: translateX(10vw); } 100% { transform: translateX(-120vw); } }
+        @keyframes cloud-drift-fast { 0% { transform: translateX(-20vw); } 100% { transform: translateX(130vw); } }
+        @keyframes sparkle-pulse { 0%, 100% { transform: scale(1); opacity: 0.2; } 50% { transform: scale(1.5); opacity: 1; } }
+        
+        /* Sand-Animation */
+        @keyframes sand-fall {
+            0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+            100% { transform: translateX(-50%) translateY(15px); opacity: 0; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="dream-bubble" style="width: 20px; height: 20px; left: 15%; animation-delay: 0s;"></div>
+    <div class="dream-bubble" style="width: 35px; height: 35px; left: 40%; animation-delay: 2s;"></div>
+    <div class="dream-bubble" style="width: 25px; height: 25px; left: 65%; animation-delay: 5s;"></div>
+    <div class="dream-bubble" style="width: 45px; height: 45px; left: 80%; animation-delay: 1s;"></div>
+    <div class="dream-bubble" style="width: 15px; height: 15px; left: 90%; animation-delay: 7s;"></div>
+    <div class="sparkle" style="top: 20%; left: 25%; animation-delay: 0s;"></div>
+    <div class="sparkle" style="top: 40%; left: 10%; animation-delay: 1s;"></div>
+    <div class="sparkle" style="top: 15%; left: 75%; animation-delay: 2s;"></div>
+    <div class="sparkle" style="top: 60%; left: 85%; animation-delay: 1.5s;"></div>
+    <div class="sparkle" style="top: 80%; left: 50%; animation-delay: 3s;"></div>
+
+    <div class="error-container">
+        <h1>504</h1>
+        
+        <div class="monster">
+            <div class="eyes">
+                <div class="eye">
+                    <div class="eyelid"></div>
+                    <div class="pupil" id="pupil-left"></div>
+                </div>
+                <div class="eye">
+                    <div class="eyelid"></div>
+                    <div class="pupil" id="pupil-right"></div>
+                </div>
+            </div>
+            
+            <div class="mouth"></div>
+            
+            <div class="hand hand-left"></div>
+            <div class="hand hand-right">
+                
+                <div class="hourglass">
+                    <div class="hg-wood"></div>
+                    <div class="hg-glass-container">
+                        <div class="hg-glass-top"></div>
+                        <div class="hg-sand-stream"></div>
+                        <div class="hg-glass-bottom">
+                            <div class="hg-sand-bottom"></div>
+                        </div>
+                    </div>
+                    <div class="hg-wood"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="shadow"></div>
+
+        <h2>Die Zeit ist abgelaufen!</h2>
+        <p>Unser kleines Monster ist schon sichtlich gelangweilt. Es hat die Sanduhr bestimmt schon dreimal umgedreht, aber der Server im Hintergrund antwortet einfach nicht.</p>
+        
+        <a href="javascript:location.reload();" class="btn">Neu laden</a>
+        
+        <a class="info-link" id="openModalBtn">Wer antwortet nicht?</a>
+    </div>
+
+    <div class="modal-overlay" id="infoModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModalBtn">&times;</button>
+            <h3>Was bedeutet "504 Gateway Timeout"?</h3>
+            <p>Ein 504-Fehler tritt auf, wenn der Server, den du kontaktierst (das Gateway), zu lange auf eine Antwort eines anderen Servers im Hintergrund warten musste, um deine Anfrage zu bearbeiten. Der erste Server hat schließlich die Geduld verloren und die Verbindung getrennt.</p>
+            <ul>
+                <li>Der Upstream-Server ist aktuell stark überlastet oder wird gerade gewartet.</li>
+                <li>Ein Datenbank-Skript im Hintergrund läuft viel zu langsam.</li>
+                <li>Netzwerkprobleme zwischen den Servern verhindern eine rechtzeitige Kommunikation.</li>
+            </ul>
+            <p><strong>Was kannst du tun?</strong><br>
+            Leider liegt das Problem nicht bei dir. Die beste Lösung ist hier Geduld. Oft handelt es sich um ein temporäres Problem, das in wenigen Minuten behoben ist. Versuche einfach, die Seite neu zu laden!</p>
+        </div>
+    </div>
+
+    <script>
+        // Augen-Bewegung (Die Pupille bewegt sich nun HINTER dem Augenlid)
+        const pupilLeft = document.getElementById('pupil-left');
+        const pupilRight = document.getElementById('pupil-right');
+
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            const offsetX = (mouseX / windowWidth) * 2 - 1;
+            const offsetY = (mouseY / windowHeight) * 2 - 1;
+            const maxMove = 8; /* Leicht reduziert, damit die Pupille nicht komplett unterm Lid verschwindet */
+            const moveX = offsetX * maxMove;
+            const moveY = offsetY * maxMove;
+            const transformString = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px))`;
+            
+            pupilLeft.style.transform = transformString;
+            pupilRight.style.transform = transformString;
+        });
+
+        // Modal Steuerung
+        const modal = document.getElementById('infoModal');
+        const openBtn = document.getElementById('openModalBtn');
+        const closeBtn = document.getElementById('closeModalBtn');
+
+        openBtn.addEventListener('click', () => modal.classList.add('active'));
+        closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
