@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oje! 404 - Seite nicht gefunden</title>
+    <title>Halt! 403 - Zugriff verweigert</title>
     <style>
         /* Grundlegendes Styling */
         body, html {
@@ -54,51 +54,74 @@
         .eyes { position: absolute; top: 60px; width: 100%; display: flex; justify-content: center; gap: 20px; }
         .eye { width: 40px; height: 40px; background-color: white; border-radius: 50%; position: relative; overflow: hidden; border: 2px solid #333; }
         .pupil { width: 20px; height: 20px; background-color: #333; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); transition: transform 0.1s ease-out; }
-        .mouth { width: 40px; height: 20px; border: 4px solid #333; border-bottom: 0; border-radius: 50px 50px 0 0; position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); }
+        
+        /* Strenger Mund für das Wächter-Monster */
+        .mouth { 
+            width: 25px; 
+            height: 0px; 
+            border: 3px solid #333; 
+            border-radius: 10px; 
+            position: absolute; 
+            bottom: 45px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+        }
 
-        /* --- GEÄNDERTE ELEMENTE: Hände neben dem Monster --- */
+        /* Hände neben dem Monster */
         .hand {
             position: absolute;
             width: 30px;
             height: 30px;
-            background-color: #ff99cc; /* Gleiche Farbe wie der Körper */
+            background-color: #ff99cc;
             border-radius: 50%;
-            border: 2px solid rgba(0,0,0,0.1); /* Leichte Kontur */
+            border: 2px solid rgba(0,0,0,0.1);
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             z-index: 11;
-            /* Positionierung auf mittlerer Höhe neben dem Körper */
             top: 110px;
         }
 
-        .hand-left { left: -15px; } /* Raggt links heraus */
-        .hand-right { right: -15px; } /* Raggt rechts heraus */
+        .hand-left { left: -15px; }
+        .hand-right { right: -15px; }
 
-        /* --- GEÄNDERTE ELEMENTE: Lupe mit orthogonalem Griff --- */
-        .magnifying-glass {
+        /* --- NEUES ELEMENT: Stoppschild (statt Lupe) --- */
+        .stop-sign {
             position: absolute;
-            width: 50px;
-            height: 50px;
-            border: 5px solid #546e7a; /* Metallischer Rahmen */
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.3); /* Glas */
-            top: -65px; /* Position relativ zur rechten Hand (schwebt darüber) */
+            width: 45px;
+            height: 45px;
+            background-color: #ff4d4f; /* Kräftiges Rot */
+            border-radius: 50%; /* Rundes Verbotsschild */
+            border: 3px solid white;
+            top: -55px; /* Schwebt über der Hand */
             left: -10px;
             z-index: 12;
-            box-shadow: inset 0 0 10px rgba(255,255,255,0.5), 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* Griff der Lupe - Jetzt orthogonal/senkrecht */
-        .magnifying-glass::after {
+        /* Der weiße Querbalken im Schild */
+        .stop-sign::before {
             content: '';
             position: absolute;
-            width: 8px;
-            height: 45px;
-            background-color: #8d6e63; /* Holzgriff */
-            border-radius: 5px;
-            /* Positionierung senkrecht nach unten aus dem Zentrum */
+            width: 25px;
+            height: 6px;
+            background-color: white;
+            border-radius: 3px;
+        }
+
+        /* Der Holzstab des Schildes */
+        .stop-sign::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 40px;
+            background-color: #8d6e63;
+            border-radius: 3px;
             top: 100%;
             left: 50%;
-            transform: translateX(-50%); /* Horizontal zentriert am Ansatz */
+            transform: translateX(-50%);
+            z-index: -1; /* Stab soll optisch hinter dem roten Schild sein */
         }
 
         /* --- RESTLICHE ANIMATIONEN & STYLING --- */
@@ -136,7 +159,7 @@
     <div class="sparkle" style="top: 80%; left: 50%; animation-delay: 3s;"></div>
 
     <div class="error-container">
-        <h1>404</h1>
+        <h1>403</h1>
         
         <div class="monster">
             <div class="eyes">
@@ -147,19 +170,19 @@
             
             <div class="hand hand-left"></div>
             <div class="hand hand-right">
-                <div class="magnifying-glass"></div>
+                <div class="stop-sign"></div>
             </div>
         </div>
         <div class="shadow"></div>
 
-        <h2>Oje! Verirrt?</h2>
-        <p>Unser kleines Such-Monster hat überall gesucht, aber diese Seite scheint einfach unauffindbar zu sein. Vielleicht hat sie sich versteckt?</p>
+        <h2>Halt! Zutritt verboten</h2>
+        <p>Unser kleines Wächter-Monster nimmt seinen Job sehr ernst. Du hast leider nicht den passenden Schlüssel, um diesen Bereich zu betreten.</p>
         
-        <a href="/" class="btn">Bring mich nach Hause</a>
+        <a href="/" class="btn">Zurück in sicheres Gebiet</a>
     </div>
 
     <script>
-        // JavaScript für die Augen-Bewegung (Unverändert)
+        // JavaScript für die Augen-Bewegung bleibt exakt gleich!
         const pupilLeft = document.getElementById('pupil-left');
         const pupilRight = document.getElementById('pupil-right');
 

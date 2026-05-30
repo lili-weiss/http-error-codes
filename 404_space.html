@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Sektor nicht gefunden</title>
+    <style>
+        /* Grundlegendes Styling und Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #050510;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffffff;
+        }
+
+        /* Der Canvas für den Sternenhimmel */
+        #starfield {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        /* Container für den Inhalt */
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        /* Die schwebende 404 */
+        h1 {
+            font-size: 12rem;
+            margin: 0;
+            color: transparent;
+            -webkit-text-stroke: 4px #00e5ff;
+            text-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+            animation: float 4s ease-in-out infinite;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin: -20px 0 20px 0;
+            color: #00e5ff;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            line-height: 1.6;
+            color: #b0c4de;
+        }
+
+        /* Schwebende Animation für Text */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-25px); }
+        }
+
+        /* Der Button zurück nach Hause */
+        .btn {
+            margin-top: 40px;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            color: #050510;
+            background-color: #00e5ff;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
+        }
+
+        .btn:hover {
+            background-color: #ffffff;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+            transform: scale(1.05);
+        }
+
+        /* Ein kleines UFO, das durch den Hintergrund fliegt */
+        .ufo {
+            position: absolute;
+            font-size: 3rem;
+            top: 20%;
+            left: -100px;
+            animation: flyby 15s linear infinite;
+            z-index: 0;
+            opacity: 0.8;
+            filter: drop-shadow(0 0 10px #00e5ff);
+        }
+
+        @keyframes flyby {
+            0% { transform: translate(-10vw, 10vh) rotate(15deg) scale(0.5); }
+            50% { transform: translate(50vw, -10vh) rotate(-5deg) scale(1.2); }
+            100% { transform: translate(110vw, 20vh) rotate(20deg) scale(0.8); }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="starfield"></canvas>
+
+    <div class="ufo">🛸</div>
+
+    <div class="content">
+        <h1>404</h1>
+        <h2>Sektor nicht gefunden</h2>
+        <p>Captain, die Sensoren melden ein absolutes Nichts. Es scheint, als hätte uns eine Raumzeit-Anomalie weit vom Kurs abgebracht. Die gesuchte Datei existiert in dieser Galaxie nicht.</p>
+        <a href="/" class="btn">Energie! (Zurück zur Brücke)</a>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('starfield');
+        const ctx = canvas.getContext('2d');
+
+        // Canvas an Fenstergröße anpassen
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        // Sternen-Klasse
+        class Star {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2;
+                this.speed = (Math.random() * 0.5) + 0.1;
+                this.opacity = Math.random();
+            }
+
+            update() {
+                // Sterne bewegen sich nach links (Warp-Effekt)
+                this.x -= this.speed;
+                
+                // Wenn ein Stern aus dem Bild fliegt, wird er rechts neu gesetzt
+                if (this.x < 0) {
+                    this.x = canvas.width;
+                    this.y = Math.random() * canvas.height;
+                }
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // Sterne generieren
+        const stars = [];
+        const starCount = 300; // Anzahl der Sterne
+        for (let i = 0; i < starCount; i++) {
+            stars.push(new Star());
+        }
+
+        // Animations-Loop
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            stars.forEach(star => {
+                star.update();
+                star.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>
