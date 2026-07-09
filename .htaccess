@@ -1,0 +1,28 @@
+# URL-Umschreibungen: alles läuft über den zentralen Router (index.php)
+RewriteEngine On
+DirectoryIndex index.php
+
+# Interne Verzeichnisse nicht direkt ausliefern
+RewriteRule ^(core|pages|templates|lang)/ - [F]
+
+# Alles, was keine echte Datei ist, an den Router geben
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L,QSA]
+
+# Eigene Fehlerseiten (laufen ebenfalls über den Router)
+ErrorDocument 400 /400
+ErrorDocument 401 /401
+ErrorDocument 402 /402
+ErrorDocument 403 /403
+ErrorDocument 404 /notfound
+ErrorDocument 408 /408
+ErrorDocument 413 /413
+ErrorDocument 422 /422
+ErrorDocument 429 /429
+ErrorDocument 451 /451
+ErrorDocument 500 /500
+ErrorDocument 502 /502
+ErrorDocument 503 /503
+ErrorDocument 504 /504
+ErrorDocument 508 /508

@@ -1,0 +1,206 @@
+{
+    "common": {
+        "lang_label": "Sprache",
+        "meta_description": "Willkommen in der Monster-Galerie! Hier findest du eine Übersicht aller Fehlerseiten, die unser kleines Monster gestaltet hat. Klicke auf einen Button, um die jeweilige Fehlerseite zu besuchen und entdecke die Abenteuer unseres freundlichen Monsters. Keine Sorge, alle Seiten sind mit viel Liebe gestaltet!",
+        "keywords": "Monster-Galerie, Fehlerseiten, HTTP-Statuscodes, 400, 401, 402, 403, 404, 408, 413, 418, 422, 429, 451, 500, 502, 503, 504, 508"
+    },
+    "pages": {
+        "home": {
+            "title": "Monster-Galerie | Fehlerseiten Übersicht",
+            "h1": "Will&shy;kommen!",
+            "intro": [
+                "Unser kleines Monster freut sich riesig, dass du da bist. Normalerweise bedeutet es nichts Gutes, wenn man es und seine Fehlerseiten sieht - aber hier in seiner Galerie kannst du dir alle seine Abenteuer in Ruhe ansehen.",
+                "Klicke einfach auf einen der Buttons, um die jeweilige Fehlerseite zu besuchen. Keine Sorge, das Monster hat alle Seiten mit viel Liebe gestaltet - auch wenn sie manchmal ein bisschen frech sein können!",
+                "Auf den Fehlerseiten bringt dich der Button jeweils hierher zurück."
+            ]
+        },
+        "notfound": {
+            "title": "Oje! 404 - Seite nicht gefunden",
+            "h2": "Oje! Verirrt?",
+            "text": [
+                "Unser kleines Such-Monster hat überall gesucht, aber diese Seite scheint einfach unauffindbar zu sein. Vielleicht hat sie sich versteckt?",
+                "Für diesen Statuscode hat unser kleines Monster (noch) keine Seite erstellt, daher siehst du diese Seite."
+            ],
+            "btn": "Bring mich nach Hause",
+            "info_link": "Wie kann ich diesen Statuscode hinzufügen?",
+            "modal_title": "Was bedeutet \"404 Not Found\"?",
+            "modal_html": "<p>Ein 404-Fehler bedeutet, dass der Server deine Anfrage verstanden hat, aber die angeforderte Seite nicht gefunden werden konnte. Das kann verschiedene Gründe haben:</p><ul><li>Die URL wurde falsch eingegeben.</li><li>Die Seite wurde gelöscht oder verschoben.</li><li>Der Link zu dieser Seite ist veraltet.</li></ul><p>Hier bedeutet diese Seite, dass wir für den von dir gesuchten Statuscode wirklich noch keine Fehlerseite erstellt haben. Du kannst uns helfen, diese Seite zu erstellen! Schreib uns eine E-Mail an <a target=\"_blank\" href=\"mailto:errors@liliweiss.dev\">errors@liliweiss.dev</a>.</p><p><strong>Was kannst du tun?</strong><br>Du kannst uns helfen, diese Seite zu erstellen! Schreib uns eine E-Mail mit dem Statuscode (und vielleicht sogar schon einer Idee für das Monster) an <a target=\"_blank\" href=\"mailto:errors@liliweiss.dev\">errors@liliweiss.dev</a>.</p>"
+        },
+        "400": {
+            "title": "Huch! 400 - Bad Request",
+            "h2": "Huch? Was war das?",
+            "text": [
+                "Unser kleines Monster kratzt sich verwirrt am Kopf. Deine Anfrage war leider fehlerhaft oder für uns völlig unverständlich. Da passt wohl irgendetwas nicht zusammen!"
+            ],
+            "btn": "Versuch es nochmal",
+            "info_link": "Was bedeutet 400?",
+            "modal_title": "Was bedeutet \"400 Bad Request\"?",
+            "modal_html": "<p>Ein 400-Fehler bedeutet, dass der Server deine Anfrage nicht verarbeiten konnte. Das kann verschiedene Gründe haben:</p><ul><li>Die Anfrage enthielt Syntaxfehler.</li><li>Die Anfrage war zu groß oder enthielt ungültige Daten.</li><li>Der Server konnte die Anfrage nicht verstehen.</li></ul><p><strong>Was kannst du tun?</strong><br>Überprüfe die URL auf Tippfehler, lösche eventuell fehlerhafte Cookies oder versuche es später nochmal. Wenn du denkst, dass alles korrekt ist, könnte es auch ein Problem auf unserer Seite sein - in diesem Fall entschuldigen wir uns und arbeiten daran, es zu beheben!</p>"
+        },
+        "401": {
+            "title": "Halt, wer da? 401 - Unauthorized",
+            "h2": "Halt, wer da?",
+            "text": [
+                "Unser kleines Monster blinzelt verwirrt, denn es kennt dich noch nicht! Um hier vorbeizukommen, benötigst du den richtigen Login-Schlüssel."
+            ],
+            "btn": "Zur Anmeldeseite",
+            "info_link": "Was bedeutet 401?",
+            "modal_title": "Was bedeutet \"401 Unauthorized\"?",
+            "modal_html": "<p>Ein 401-Fehler bedeutet simpel ausgedrückt: <strong>Du bist nicht angemeldet.</strong> Der Server weiß nicht, mit wem er es zu tun hat, und blockiert deshalb den Zugriff auf geschützte Ressourcen.</p><ul><li><strong>Im Gegensatz zu 403:</strong> Bei einem 403-Fehler (Forbidden) weiß der Server genau, wer du bist (du bist eingeloggt), aber du hast nicht die nötigen Rechte (z.B. keine Administrator-Rolle).</li><li>Bei einem 401-Fehler fehlen schlichtweg deine Zugangsdaten.</li></ul><p><strong>Was kannst du tun?</strong><br>Du musst dich lediglich mit deinem Benutzernamen und Passwort an der Website anmelden. Falls du bereits eingeloggt warst, ist eventuell deine Sitzung (Session) abgelaufen und du musst dich erneut anmelden.</p>"
+        },
+        "402": {
+            "title": "Zahlung erforderlich! 402 - Payment Required",
+            "h2": "Zahlung erforderlich!",
+            "text": [
+                "Hoppla! Es scheint, als hättest du versucht, einen Dienst zu nutzen, für den eine Zahlung erforderlich ist. Unser kleines Monster-Bankier hat seinen Zylinder und sein Monokel aufgesetzt, um die Angelegenheit zu klären."
+            ],
+            "btn": "Jetzt bezahlen",
+            "info_link": "Was bedeutet 'Payment Required'?",
+            "modal_title": "Was bedeutet '402 Payment Required'?",
+            "modal_html": "<p>Ein 402-Fehler ist ein seltener HTTP-Statuscode, der darauf hinweist, dass für die Ausführung der Anforderung eine Zahlung erforderlich ist. Dies wird oft von Zahlungs-Gateways oder Abonnement-Diensten verwendet, um sicherzustellen, dass die Rechnungsstellung korrekt ist.</p><ul><li><strong>Zahlungs-Dienst:</strong> Die Website oder der API-Dienst erfordert ein aktives Abonnement oder eine einmalige Zahlung.</li><li><strong>Kreditkarten-Verifizierung:</strong> Die hinterlegte Kreditkarte konnte nicht belastet werden oder ist abgelaufen.</li></ul><p><strong>Was kannst du tun?</strong><br>Stelle sicher, dass deine Zahlungsinformationen auf dem neuesten Stand sind und dass deine Kreditkarte nicht abgelaufen ist. Wenn du ein Abonnement hast, überprüfe, ob es aktiv ist.</p>"
+        },
+        "403": {
+            "title": "Halt! 403 - Zugriff verweigert",
+            "h2": "Halt! Zutritt verboten",
+            "text": [
+                "Unser kleines Wächter-Monster nimmt seinen Job sehr ernst. Du hast leider nicht den passenden Schlüssel, um diesen Bereich zu betreten."
+            ],
+            "btn": "Zurück in sicheres Gebiet",
+            "info_link": "Warum bin ich ausgesperrt?",
+            "modal_title": "Was bedeutet \"403 Forbidden\"?",
+            "modal_html": "<p>Ein 403-Fehler bedeutet, dass der Server deine Anfrage zwar verstanden hat, dir aber den Zugriff verweigert. Das kann verschiedene Gründe haben:</p><ul><li>Du bist <strong>nicht angemeldet</strong> oder verwendest das falsche Konto.</li><li>Dir fehlen die nötigen <strong>Berechtigungen</strong> (z.B. Admin-Rechte) für diese spezifische Seite.</li><li>Deine IP-Adresse wurde aus Sicherheitsgründen blockiert.</li></ul><p><strong>Was kannst du tun?</strong><br>Überprüfe zunächst, ob du korrekt eingeloggt bist. Wenn du dir sicher bist, dass du eigentlich Zugriff haben solltest, wende dich am besten direkt an den Administrator der Website.</p>"
+        },
+        "404": {
+            "title": "Oje! 404 - Seite nicht gefunden",
+            "h2": "Oje! Verirrt?",
+            "text": [
+                "Unser kleines Such-Monster hat überall gesucht, aber diese Seite scheint einfach unauffindbar zu sein. Vielleicht hat sie sich versteckt?"
+            ],
+            "btn": "Bring mich nach Hause",
+            "info_link": "Wo ist die Seite?",
+            "modal_title": "Was bedeutet \"404 Not Found\"?",
+            "modal_html": "<p>Ein 404-Fehler bedeutet, dass der Server deine Anfrage verstanden hat, aber die angeforderte Seite nicht gefunden werden konnte. Das kann verschiedene Gründe haben:</p><ul><li>Die URL wurde falsch eingegeben.</li><li>Die Seite wurde gelöscht oder verschoben.</li><li>Der Link zu dieser Seite ist veraltet.</li></ul><p><strong>Was kannst du tun?</strong><br>Überprüfe die URL auf Tippfehler, gehe zurück zur Startseite oder nutze die Navigation, um die gesuchte Information zu finden. Wenn du denkst, dass dies ein Fehler ist, kontaktiere bitte den Support.</p>"
+        },
+        "408": {
+            "title": "Zzz... 408 - Request Timeout",
+            "h2": "Zzz... Zeitüberschreitung",
+            "text": [
+                "Unser kleines Monster hat so lange auf deine Daten gewartet, dass es glatt eingeschlafen ist! Die Verbindung hat leider einen Timeout erlitten."
+            ],
+            "btn": "Aufwecken & Neu laden",
+            "info_link": "Warum bin ich hier gelandet?",
+            "modal_title": "Was bedeutet \"408 Request Timeout\"?",
+            "modal_html": "<p>Dieser Fehler tritt auf, wenn dein Browser den Server kontaktiert hat, aber zu lange brauchte, um die tatsächlichen Daten zu senden. Der Server hat schließlich die Geduld verloren und die Verbindung getrennt.</p><ul><li>Deine Internetverbindung ist gerade sehr langsam, instabil oder kurzzeitig abgerissen.</li><li>Du wolltest eine extrem große Datei hochladen, was das Zeitlimit überschritten hat.</li><li>Der Server ist aktuell stark ausgelastet und trennt langsame Verbindungen vorsorglich ab.</li></ul><p><strong>Was kannst du tun?</strong><br>Überprüfe kurz deine WLAN- oder Netzwerkverbindung. Meistens reicht es schon, das kleine Monster aufzuwecken und die Seite einfach neu zu laden!</p>"
+        },
+        "413": {
+            "title": "Uff! 413 - Content Too Large",
+            "h2": "Uff! Ein echtes Schwergewicht",
+            "text": [
+                "Unser kleines Monster stemmt sich mit ganzer Kraft dagegen, aber die Datei, die du senden wolltest, ist einfach viel zu riesig und schwer für den Server!"
+            ],
+            "btn": "Gepäck verkleinern & zurück",
+            "info_link": "Was bedeutet \"Content Too Large\"?",
+            "modal_title": "Was bedeutet \"413 Content Too Large\"?",
+            "modal_html": "<p>Ein 413-Fehler tritt auf, wenn du versuchst, Daten an den Server zu senden, die das zuvor festgelegte Größenlimit komplett überschreiten.</p><ul><li>Du wolltest ein hochauflösendes Bild oder ein sehr langes Video hochladen, für das der Server nicht ausgelegt ist.</li><li>Der Webserver (z. B. Nginx oder Apache) blockiert aus Sicherheitsgründen zu große Datenpakete, um Speicherüberlastungen zu vermeiden.</li></ul><p><strong>Was kannst du tun?</strong><br>Überprüfe die Größe deiner Datei. Oft hilft es, Bilder zu komprimieren oder große Datenmengen in mehrere, kleinere Pakete (z. B. ZIP-Archive) aufzuteilen, bevor du den Upload erneut startest.</p>"
+        },
+        "418": {
+            "title": "Abwarten und Tee trinken! 418 - I'm a Teapot",
+            "h2": "I'm a Teapot!",
+            "text": [
+                "Du wolltest eigentlich Kaffee kochen, aber unser kleines Monster ist heute eine Teekanne! Lehn dich zurück, entspann dich und genieße eine herrliche, virtuelle Tasse Earl Grey."
+            ],
+            "btn": "Teezeit beenden",
+            "info_link": "Wann gibt es wieder Kaffee?",
+            "modal_title": "Was bedeutet \"418 I'm a Teapot\"?",
+            "modal_html": "<p>Dieser Fehlercode ist eigentlich ein historischer Internet-Scherz! Er stammt aus einem offiziellen Aprilscherz der Internet Engineering Task Force (IETF) aus dem Jahr 1998, der ein Protokoll zur Steuerung von Kaffeemaschinen definierte.</p><ul><li>Du versuchst offensichtlich, Kaffee mit einer Teekanne zu kochen.</li><li>Der Entwickler dieser Website hat einen Sinn für Humor und diesen Code als kleines \"Easter Egg\" versteckt.</li></ul><p><strong>Was kannst du tun?</strong><br>Technisch gesehen gibt es hier nichts zu reparieren! Mach dir einen leckeren Tee, lehn dich zurück und klicke auf den Button, um zur normalen Startseite zurückzukehren.</p>"
+        },
+        "422": {
+            "title": "Passt nicht! 422 - Unprocessable Content",
+            "h2": "Das passt hier nicht rein!",
+            "text": [
+                "Unser Monster hämmert mit aller Kraft, aber dieser eckige Daten-Klotz passt einfach nicht in das runde Loch. Deine Eingaben ergeben hier leider keinen Sinn!"
+            ],
+            "btn": "Eingaben korrigieren",
+            "info_link": "Was bedeutet \"Unprocessable Content\"?",
+            "modal_title": "Was bedeutet \"422 Unprocessable Content\"?",
+            "modal_html": "<p>Bei diesem Fehler hat der Server deine Anfrage zwar vom Format her verstanden (deshalb ist es kein \"Bad Request\"), konnte sie aber inhaltlich nicht verarbeiten. Die gesendeten Daten verstoßen gegen die logischen Regeln der Website.</p><ul><li>Du hast z. B. Buchstaben in ein reines Zahlenfeld eingetragen (wie bei einer Postleitzahl).</li><li>Ein zwingend erforderliches Pflichtfeld wurde beim Absenden eines Formulars versehentlich leer gelassen.</li><li>Ein Passwort erfüllt nicht die erforderlichen Sicherheitsrichtlinien (zu kurz, keine Sonderzeichen).</li></ul><p><strong>Was kannst du tun?</strong><br>Der Server weiß nicht, was er mit diesen unlogischen Daten anfangen soll. Gehe einen Schritt zurück und überprüfe deine eingegebenen Formulardaten noch einmal ganz genau auf logische oder inhaltliche Tippfehler.</p>"
+        },
+        "429": {
+            "title": "Langsam! 429 - Too Many Requests",
+            "h2": "Langsam, langsam!",
+            "text": [
+                "Unser kleines Monster wird gerade mit Anfragen regelrecht bombardiert und kommt mit dem Abarbeiten gar nicht mehr hinterher. Gib ihm eine kleine Pause!"
+            ],
+            "btn": "Kurz durchatmen & neu laden",
+            "info_link": "Warum bin ich geblockt?",
+            "modal_title": "Was bedeutet \"429 Too Many Requests\"?",
+            "modal_html": "<p>Dieser Statuscode ist eine bewusste Schutzmaßnahme des Servers – das sogenannte <strong>Rate Limiting</strong>. Gerade wenn im Hintergrund eigene Schnittstellen – etwa eine komplexe Serveranwendung – angebunden sind, ist dieser Schutz extrem wichtig, damit der Server unter der Last nicht zusammenbricht.</p><ul><li>Du hast in sehr kurzer Zeit zu oft geklickt oder die Seite zu schnell mehrfach neu geladen.</li><li>Ein automatisiertes Skript oder ein Plugin in deinem Browser sendet im Hintergrund zu viele Anfragen auf einmal.</li></ul><p><strong>Was kannst du tun?</strong><br>Die Lösung ist denkbar einfach: Abwarten! Das System hebt diese Sperre in der Regel nach einigen Sekunden oder wenigen Minuten automatisch wieder auf.</p>"
+        },
+        "451": {
+            "title": "Gesperrt! 451 - Aus rechtlichen Gründen nicht verfügbar",
+            "h2": "Aus rechtlichen Gründen gesperrt",
+            "text": [
+                "Unser kleines Monster hat eine offizielle Anordnung erhalten und nimmt die Gesetzeslage sehr ernst. Dieser Inhalt musste leider blockiert werden."
+            ],
+            "btn": "Zurück in die Legalität",
+            "info_link": "Warum ist dieser Inhalt gesperrt?",
+            "modal_title": "Was bedeutet \"451 Unavailable for Legal Reasons\"?",
+            "modal_html": "<p>Dieser Code gibt an, dass der Server die angeforderte Seite aus rechtlichen Gründen blockieren musste. Die Zahl 451 ist übrigens eine kluge Anspielung auf den dystopischen Roman \"Fahrenheit 451\", in dem es um Zensur geht.</p><ul><li>Ein richterlicher Beschluss oder eine behördliche Anordnung blockiert diese spezifische Seite.</li><li>Es liegt ein Verstoß gegen das Urheberrecht oder andere rechtliche Bestimmungen vor.</li><li>Bestimmte Inhalte sind in deiner aktuellen Region gesetzlich nicht zulässig.</li></ul><p><strong>Was kannst du tun?</strong><br>Leider hast du als Nutzer hier keine direkte Möglichkeit, das Problem zu lösen. Du kannst lediglich später wiederkommen, um zu sehen, ob die rechtliche Sperre eventuell aufgehoben wurde.</p>"
+        },
+        "500": {
+            "title": "Oopsy! 500 - Server-Schluckauf",
+            "h2": "Oopsy! Ein kleiner Defekt",
+            "text": [
+                "Unser kleines Monster kratzt sich verwirrt am Kopf. Irgendetwas ist im Serverraum furchtbar schiefgelaufen und die Maschine raucht! Wir sind schon am Tüfteln."
+            ],
+            "btn": "Zurück ins sichere Gebiet",
+            "info_link": "Warum ist dieser Fehler aufgetreten?",
+            "modal_title": "Was bedeutet \"500 Internal Server Error\"?",
+            "modal_html": "<p>Ein 500er-Fehler ist ein klassischer Sammelbegriff für: \"Auf dem Server ist gerade etwas unerwartet schiefgelaufen\". Die Website weiß selbst nicht genau, was das Problem ist, nur dass sie deine Anfrage gerade nicht verarbeiten kann.</p><ul><li>Ein Programmierfehler oder ein fehlerhaftes Skript im Code der Website.</li><li>Die im Hintergrund angebundene Datenbank ist kurzzeitig nicht erreichbar.</li><li>Ein fehlerhaftes Update oder ein Plugin verursacht Konflikte im System.</li></ul><p><strong>Was kannst du tun?</strong><br>Meistens liegt das Problem nicht bei dir und die Administratoren arbeiten im Hintergrund bereits an einer Lösung. Lade die Seite in ein paar Minuten neu. Wenn das Problem hartnäckig bleibt, versuche es morgen noch einmal.</p>"
+        },
+        "502": {
+            "title": "Oh nein! 502 - Bad Gateway",
+            "h2": "Verbindung unterbrochen!",
+            "text": [
+                "Unser kleines Monster versucht verzweifelt, die Kabel zusammenzustecken, aber der Server im Hintergrund antwortet einfach nicht richtig."
+            ],
+            "btn": "Verbindung neu aufbauen",
+            "info_link": "Was bedeutet dieser Fehler?",
+            "modal_title": "Was bedeutet \"502 Bad Gateway\"?",
+            "modal_html": "<p>Ein 502-Fehler tritt auf, wenn ein Server im Internet als \"Türsteher\" oder Mittelsmann (ein Proxy oder Gateway) arbeitet und versucht, die nötigen Daten von einem anderen Server im Hintergrund abzurufen.</p><ul><li>Der Hintergrund-Server (Upstream) ist gerade dabei neuzustarten oder bekommt ein Update.</li><li>Die Verbindung zwischen den beiden Servern ist blockiert.</li><li>Die Antwort des Hintergrund-Servers war fehlerhaft.</li></ul><p><strong>Was kannst du tun?</strong><br>Oft ist dies nur ein sehr kurzes, temporäres Problem während einer Wartung. Lade die Seite einfach nach ein bis zwei Minuten noch einmal neu.</p>"
+        },
+        "503": {
+            "title": "Wartungsarbeiten! 503 - Service Unavailable",
+            "h2": "Gleich wieder da!",
+            "text": [
+                "Unser Server-Monster hat sich den Bauhelm aufgesetzt und arbeitet fleißig hinter den Kulissen. Wir führen gerade wichtige Wartungsarbeiten durch und sind in Kürze wieder erreichbar."
+            ],
+            "btn": "Seite neu laden",
+            "info_link": "Warum ist die Seite nicht verfügbar?",
+            "modal_title": "Was bedeutet \"503 Service Unavailable\"?",
+            "modal_html": "<p>Dieser Statuscode ist quasi das \"Wegen Umbau geschlossen\"-Schild des Internets. Der Server funktioniert prinzipiell einwandfrei, ist aber aktuell schlichtweg nicht in der Lage, neue Anfragen zu bearbeiten.</p><ul><li>Die Website wird gerade planmäßig gewartet oder es werden wichtige Updates eingespielt.</li><li>Der Server ist durch unerwartet viele Besucher komplett überlastet und braucht eine kurze Pause.</li></ul><p><strong>Was kannst du tun?</strong><br>Die beste Lösung ist hier Geduld. Versuche einfach, die Seite über unseren Button in ein paar Minuten noch einmal neu zu laden. Sobald die Wartungsarbeiten abgeschlossen sind oder der Ansturm nachlässt, ist die Seite wieder da.</p>"
+        },
+        "504": {
+            "title": "Zeit abgelaufen! 504 - Gateway Timeout",
+            "h2": "Die Zeit ist abgelaufen!",
+            "text": [
+                "Unser kleines Monster ist schon sichtlich gelangweilt. Es hat die Sanduhr bestimmt schon dreimal umgedreht, aber der Server im Hintergrund antwortet einfach nicht."
+            ],
+            "btn": "Neu laden",
+            "info_link": "Wer antwortet nicht?",
+            "modal_title": "Was bedeutet \"504 Gateway Timeout\"?",
+            "modal_html": "<p>Ein 504-Fehler tritt auf, wenn der Server, den du kontaktierst (das Gateway), zu lange auf eine Antwort eines anderen Servers im Hintergrund warten musste, um deine Anfrage zu bearbeiten. Der erste Server hat schließlich die Geduld verloren und die Verbindung getrennt.</p><ul><li>Der andere Server ist aktuell stark überlastet oder wird gerade gewartet.</li><li>Eine Datenbank im Hintergrund läuft viel zu langsam.</li><li>Netzwerkprobleme zwischen den Servern verhindern eine rechtzeitige Kommunikation.</li></ul><p><strong>Was kannst du tun?</strong><br>Leider liegt das Problem nicht bei dir. Die beste Lösung ist hier Geduld. Oft handelt es sich um ein temporäres Problem, das in wenigen Minuten behoben ist. Versuche einfach, die Seite neu zu laden!</p>"
+        },
+        "508": {
+            "title": "Endlosschleife! 508 - Loop Detected",
+            "h2": "Endlosschleife entdeckt!",
+            "text": [
+                "Unser kleines Monster rennt und rennt im Hamsterrad, kommt aber nicht von der Stelle. Der Server hat sich in einer unendlichen Umleitungsschleife verfangen!"
+            ],
+            "btn": "Aus dem Rad aussteigen",
+            "info_link": "Was ist eine Endlosschleife?",
+            "modal_title": "Was bedeutet \"508 Loop Detected\"?",
+            "modal_html": "<p>Ein 508-Fehler passiert, wenn der Server bei der Verarbeitung deiner Anfrage in einen endlosen Kreislauf (Loop) gerät und diese Kette automatisch abbricht, um nicht komplett abzustürzen.</p><ul><li><strong>Redirect Loop:</strong> Seite A leitet automatisch auf Seite B um, und Seite B leitet sofort wieder auf Seite A zurück.</li><li>Die Serverkonfiguration (z. B. `.htaccess`) enthält einen sich selbst wiederholenden oder fehlerhaften Befehl.</li></ul><p><strong>Was kannst du tun?</strong><br>Da Weiterleitungen oft in deinem Browser-Cache gespeichert werden, hilft es manchmal, die <strong>Cookies und den Cache zu leeren</strong>. Hilft das nicht, liegt ein Konfigurationsfehler beim Website-Betreiber vor.</p>"
+        }
+    }
+}
