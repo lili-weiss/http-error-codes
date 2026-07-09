@@ -16,12 +16,16 @@ ErrorDocument 401 /401
 ErrorDocument 402 /402
 ErrorDocument 403 /403
 ErrorDocument 404 /notfound
+ErrorDocument 405 /405
 ErrorDocument 408 /408
+ErrorDocument 409 /409
+ErrorDocument 410 /410
 ErrorDocument 413 /413
 ErrorDocument 422 /422
 ErrorDocument 429 /429
 ErrorDocument 451 /451
 ErrorDocument 500 /500
+ErrorDocument 501 /501
 ErrorDocument 502 /502
 ErrorDocument 503 /503
 ErrorDocument 504 /504

@@ -2,7 +2,7 @@
     "common": {
         "lang_label": "Language",
         "meta_description": "Welcome to the Monster Gallery! Here you'll find an overview of all the error pages our little monster has designed. Click a button to visit each error page and discover the adventures of our friendly monster. Don't worry, every page was crafted with lots of love!",
-        "keywords": "Monster Gallery, error pages, HTTP status codes, 400, 401, 402, 403, 404, 408, 413, 418, 422, 429, 451, 500, 502, 503, 504, 508"
+        "keywords": "Monster Gallery, error pages, HTTP status codes, 400, 401, 402, 403, 404, 405, 408, 409, 410, 413, 418, 422, 429, 451, 500, 501, 502, 503, 504, 508"
     },
     "pages": {
         "home": {
@@ -24,7 +24,7 @@
             "btn": "Take me home",
             "info_link": "How can I add this status code?",
             "modal_title": "What does \"404 Not Found\" mean?",
-            "modal_html": "<p>A 404 error means the server understood your request but couldn't find the page you asked for. This can happen for several reasons:</p><ul><li>The URL was typed incorrectly.</li><li>The page was deleted or moved.</li><li>The link to this page is outdated.</li></ul><p>Here, this page means we really haven't created an error page for the status code you were looking for yet. You can help us create it! Send us an email at <a target=\"_blank\" href=\"mailto:errors@liliweiss.dev\">errors@liliweiss.dev</a>.</p><p><strong>What can you do?</strong><br>You can help us create this page! Send us an email with the status code (and maybe even an idea for the monster) to <a target=\"_blank\" href=\"mailto:errors@liliweiss.dev\">errors@liliweiss.dev</a>.</p>"
+            "modal_html": "<p>A 404 error means the server understood your request but couldn't find the page you asked for. This can happen for several reasons:</p><ul><li>The URL was typed incorrectly.</li><li>The page was deleted or moved.</li><li>The link to this page is outdated.</li></ul><p>Here, this page means we really haven't created an error page for the status code you were looking for yet.</p><p><strong>What can you do?</strong><br>You can help us create this page! Send us an email with the status code (and maybe even an idea for the monster) to <a target=\"_blank\" href=\"mailto:errors@liliweiss.dev\">errors@liliweiss.dev</a>.</p>"
         },
         "400": {
             "title": "Whoops! 400 - Bad Request",
@@ -52,7 +52,7 @@
             "title": "Payment required! 402 - Payment Required",
             "h2": "Payment required!",
             "text": [
-                "Oops! It looks like you tried to use a service that requires payment. Our little monster banker has put on its top hat and monocle to sort out the matter."
+                "Oops! It looks like you tried to use a service that requires payment. Our little monster is already patiently holding up its piggy bank, waiting for the first coins to clink."
             ],
             "btn": "Pay now",
             "info_link": "What does 'Payment Required' mean?",
@@ -81,6 +81,17 @@
             "modal_title": "What does \"404 Not Found\" mean?",
             "modal_html": "<p>A 404 error means the server understood your request but couldn't find the page you asked for. This can happen for several reasons:</p><ul><li>The URL was typed incorrectly.</li><li>The page was deleted or moved.</li><li>The link to this page is outdated.</li></ul><p><strong>What can you do?</strong><br>Check the URL for typos, go back to the home page, or use the navigation to find the information you're looking for. If you think this is a mistake, please contact support.</p>"
         },
+        "405": {
+            "title": "Wrong way! 405 - Method Not Allowed",
+            "h2": "You can't get in this way!",
+            "text": [
+                "Our little bouncer monster shakes its head firmly and crosses its arms. The page does exist - but the way you tried to get in is not allowed at this entrance!"
+            ],
+            "btn": "Back to the main entrance",
+            "info_link": "What does 405 mean?",
+            "modal_title": "What does \"405 Method Not Allowed\" mean?",
+            "modal_html": "<p>Every request to a server uses a so-called HTTP method (e.g. GET to retrieve or POST to send data). A 405 error means: the requested page exists, but the method used is not allowed for it.</p><ul><li>A form sends data via POST to an address that only accepts GET (or vice versa).</li><li>An API is called with a method (e.g. DELETE or PUT) that isn't supported there.</li><li>The server is configured to block certain methods for security reasons.</li></ul><p><strong>What can you do?</strong><br>As a regular visitor you'll rarely end up here - usually it's enough to simply open the page again via the normal navigation. As a developer, take a look at the <code>Allow</code> header of the response: it tells you which methods are permitted.</p>"
+        },
         "408": {
             "title": "Zzz... 408 - Request Timeout",
             "h2": "Zzz... Timed out",
@@ -91,6 +102,28 @@
             "info_link": "Why did I end up here?",
             "modal_title": "What does \"408 Request Timeout\" mean?",
             "modal_html": "<p>This error occurs when your browser contacted the server but took too long to send the actual data. The server eventually lost patience and closed the connection.</p><ul><li>Your internet connection is currently very slow, unstable, or briefly dropped out.</li><li>You tried to upload an extremely large file, which exceeded the time limit.</li><li>The server is currently under heavy load and preemptively disconnects slow connections.</li></ul><p><strong>What can you do?</strong><br>Quickly check your Wi-Fi or network connection. Usually it's enough to wake the little monster up and simply reload the page!</p>"
+        },
+        "409": {
+            "title": "Quarrel! 409 - Conflict",
+            "h2": "Two want the same thing!",
+            "text": [
+                "Both of our little monsters are tugging at the same document at the same time - and neither wants to let go. Unfortunately, your request conflicts with the current state on the server!"
+            ],
+            "btn": "Settle the quarrel & go back",
+            "info_link": "What does 409 mean?",
+            "modal_title": "What does \"409 Conflict\" mean?",
+            "modal_html": "<p>A 409 error means your request was valid, but it collides with the current state of the resource on the server. The server therefore can't carry it out without putting data at risk.</p><ul><li><strong>Editing conflict:</strong> Two people are editing the same document at the same time, and one version has become outdated.</li><li>A file with the same name already exists when uploading.</li><li>A change is based on an old state that has since been overwritten.</li></ul><p><strong>What can you do?</strong><br>Reload the page to get the latest state, then apply your change again. With forms, it often helps to quickly copy your input before refreshing the page.</p>"
+        },
+        "410": {
+            "title": "Gone for good! 410 - Gone",
+            "h2": "Gone for good!",
+            "text": [
+                "Our little monster has packed its bags and is waving goodbye. This page really did exist once - but it has been removed deliberately and permanently. It won't be coming back."
+            ],
+            "btn": "Take me home",
+            "info_link": "How is this different from 404?",
+            "modal_title": "What does \"410 Gone\" mean?",
+            "modal_html": "<p>A 410 error is the definitive version of a 404: the server is deliberately telling you that this page used to exist, but has been <strong>permanently removed</strong> and won't return.</p><ul><li><strong>Unlike 404:</strong> With a 404, the server only knows it can't find the page - it might reappear later. With 410, the disappearance is intentional and final.</li><li>Typical cases: expired promotions or job listings, deleted posts, or old content that was deliberately cleaned up.</li><li>Search engines understand the hint too, and remove such pages from their index more quickly.</li></ul><p><strong>What can you do?</strong><br>Update outdated bookmarks or links - there's nothing left to find here. You're sure to find an up-to-date replacement for the content via the home page.</p>"
         },
         "413": {
             "title": "Oof! 413 - Content Too Large",
@@ -157,6 +190,17 @@
             "info_link": "Why did this error occur?",
             "modal_title": "What does \"500 Internal Server Error\" mean?",
             "modal_html": "<p>A 500 error is a classic catch-all for: \"Something unexpectedly went wrong on the server\". The website itself doesn't know exactly what the problem is, only that it can't process your request right now.</p><ul><li>A programming error or a faulty script in the website's code.</li><li>The database connected in the background is temporarily unreachable.</li><li>A faulty update or a plugin is causing conflicts in the system.</li></ul><p><strong>What can you do?</strong><br>Usually the problem isn't on your end, and the administrators are already working on a solution behind the scenes. Reload the page in a few minutes. If the problem persists, try again tomorrow.</p>"
+        },
+        "501": {
+            "title": "Not invented yet! 501 - Not Implemented",
+            "h2": "Still tinkering on this one!",
+            "text": [
+                "Our little inventor monster is eagerly studying the blueprint, but this feature simply hasn't been fully built yet. The robot is still missing a few parts!"
+            ],
+            "btn": "Back to the home page",
+            "info_link": "What does 501 mean?",
+            "modal_title": "What does \"501 Not Implemented\" mean?",
+            "modal_html": "<p>A 501 error means the server doesn't support the functionality required to fulfill your request at all - it simply hasn't been implemented (yet).</p><ul><li><strong>Unlike 405:</strong> With 405, the server knows the HTTP method but just doesn't allow it for this page. With 501, it can't handle the method at all.</li><li>A very exotic or brand-new HTTP method was used.</li><li>The server runs very old or minimal software that doesn't know the feature - or the feature is still under development.</li></ul><p><strong>What can you do?</strong><br>As a visitor there's unfortunately little you can do here. Try again later or let the website operator know - maybe the feature will be finished soon.</p>"
         },
         "502": {
             "title": "Oh no! 502 - Bad Gateway",

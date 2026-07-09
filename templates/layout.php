@@ -84,7 +84,7 @@
 
             <a href="/" class="btn"><?= t("pages.$id.btn") ?></a>
 
-            <a class="info-link" id="openModalBtn"><?= t("pages.$id.info_link") ?></a>
+            <a class="info-link" id="openModalBtn" role="button" tabindex="0"><?= t("pages.$id.info_link") ?></a>
 <?php endif; ?>
         </div>
     </div>

@@ -21,8 +21,8 @@ return [
             position: absolute;
             top: 0;
             left: 0;
-            border-left: 16px solid transparent;
-            border-right: 16px solid transparent;
+            border-left: 18px solid transparent;
+            border-right: 18px solid transparent;
             border-top: 10px solid #cbd5e1;
         }
 

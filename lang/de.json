@@ -2,7 +2,7 @@
     "common": {
         "lang_label": "Sprache",
         "meta_description": "Willkommen in der Monster-Galerie! Hier findest du eine Übersicht aller Fehlerseiten, die unser kleines Monster gestaltet hat. Klicke auf einen Button, um die jeweilige Fehlerseite zu besuchen und entdecke die Abenteuer unseres freundlichen Monsters. Keine Sorge, alle Seiten sind mit viel Liebe gestaltet!",
-        "keywords": "Monster-Galerie, Fehlerseiten, HTTP-Statuscodes, 400, 401, 402, 403, 404, 408, 413, 418, 422, 429, 451, 500, 502, 503, 504, 508"
+        "keywords": "Monster-Galerie, Fehlerseiten, HTTP-Statuscodes, 400, 401, 402, 403, 404, 405, 408, 409, 410, 413, 418, 422, 429, 451, 500, 501, 502, 503, 504, 508"
     },
     "pages": {
         "home": {
@@ -24,7 +24,7 @@
             "btn": "Bring mich nach Hause",
             "info_link": "Wie kann ich diesen Statuscode hinzufügen?",
             "modal_title": "Was bedeutet \"404 Not Found\"?",
-            "modal_html": "<p>Ein 404-Fehler bedeutet, dass der Server deine Anfrage verstanden hat, aber die angeforderte Seite nicht gefunden werden konnte. Das kann verschiedene Gründe haben:</p><ul><li>Die URL wurde falsch eingegeben.</li><li>Die Seite wurde gelöscht oder verschoben.</li><li>Der Link zu dieser Seite ist veraltet.</li></ul><p>Hier bedeutet diese Seite, dass wir für den von dir gesuchten Statuscode wirklich noch keine Fehlerseite erstellt haben. Du kannst uns helfen, diese Seite zu erstellen! Schreib uns eine E-Mail an <a target=\"_blank\" href=\"mailto:errors@liliweiss.dev\">errors@liliweiss.dev</a>.</p><p><strong>Was kannst du tun?</strong><br>Du kannst uns helfen, diese Seite zu erstellen! Schreib uns eine E-Mail mit dem Statuscode (und vielleicht sogar schon einer Idee für das Monster) an <a target=\"_blank\" href=\"mailto:errors@liliweiss.dev\">errors@liliweiss.dev</a>.</p>"
+            "modal_html": "<p>Ein 404-Fehler bedeutet, dass der Server deine Anfrage verstanden hat, aber die angeforderte Seite nicht gefunden werden konnte. Das kann verschiedene Gründe haben:</p><ul><li>Die URL wurde falsch eingegeben.</li><li>Die Seite wurde gelöscht oder verschoben.</li><li>Der Link zu dieser Seite ist veraltet.</li></ul><p>Hier bedeutet diese Seite, dass wir für den von dir gesuchten Statuscode wirklich noch keine Fehlerseite erstellt haben.</p><p><strong>Was kannst du tun?</strong><br>Du kannst uns helfen, diese Seite zu erstellen! Schreib uns eine E-Mail mit dem Statuscode (und vielleicht sogar schon einer Idee für das Monster) an <a target=\"_blank\" href=\"mailto:errors@liliweiss.dev\">errors@liliweiss.dev</a>.</p>"
         },
         "400": {
             "title": "Huch! 400 - Bad Request",
@@ -52,7 +52,7 @@
             "title": "Zahlung erforderlich! 402 - Payment Required",
             "h2": "Zahlung erforderlich!",
             "text": [
-                "Hoppla! Es scheint, als hättest du versucht, einen Dienst zu nutzen, für den eine Zahlung erforderlich ist. Unser kleines Monster-Bankier hat seinen Zylinder und sein Monokel aufgesetzt, um die Angelegenheit zu klären."
+                "Hoppla! Es scheint, als hättest du versucht, einen Dienst zu nutzen, für den eine Zahlung erforderlich ist. Unser kleines Monster hält schon geduldig sein Sparschwein bereit und wartet darauf, dass die ersten Münzen klimpern."
             ],
             "btn": "Jetzt bezahlen",
             "info_link": "Was bedeutet 'Payment Required'?",
@@ -81,6 +81,17 @@
             "modal_title": "Was bedeutet \"404 Not Found\"?",
             "modal_html": "<p>Ein 404-Fehler bedeutet, dass der Server deine Anfrage verstanden hat, aber die angeforderte Seite nicht gefunden werden konnte. Das kann verschiedene Gründe haben:</p><ul><li>Die URL wurde falsch eingegeben.</li><li>Die Seite wurde gelöscht oder verschoben.</li><li>Der Link zu dieser Seite ist veraltet.</li></ul><p><strong>Was kannst du tun?</strong><br>Überprüfe die URL auf Tippfehler, gehe zurück zur Startseite oder nutze die Navigation, um die gesuchte Information zu finden. Wenn du denkst, dass dies ein Fehler ist, kontaktiere bitte den Support.</p>"
         },
+        "405": {
+            "title": "Falscher Weg! 405 - Method Not Allowed",
+            "h2": "So kommst du hier nicht rein!",
+            "text": [
+                "Unser kleines Türsteher-Monster schüttelt entschieden den Kopf und verschränkt die Arme. Die Seite gibt es zwar - aber der Weg, den du gewählt hast, ist an diesem Eingang nicht erlaubt!"
+            ],
+            "btn": "Zurück zum Haupteingang",
+            "info_link": "Was bedeutet 405?",
+            "modal_title": "Was bedeutet \"405 Method Not Allowed\"?",
+            "modal_html": "<p>Jede Anfrage an einen Server benutzt eine sogenannte HTTP-Methode (z.B. GET zum Abrufen oder POST zum Senden von Daten). Ein 405-Fehler bedeutet: Die angeforderte Seite existiert, aber die verwendete Methode ist für sie nicht erlaubt.</p><ul><li>Ein Formular sendet Daten per POST an eine Adresse, die nur GET akzeptiert (oder umgekehrt).</li><li>Eine API wird mit einer Methode aufgerufen (z.B. DELETE oder PUT), die dort nicht unterstützt wird.</li><li>Der Server ist so konfiguriert, dass er bestimmte Methoden aus Sicherheitsgründen blockiert.</li></ul><p><strong>Was kannst du tun?</strong><br>Als normaler Besucher landest du hier selten - meist reicht es, die Seite einfach über die normale Navigation neu aufzurufen. Als Entwickler lohnt sich ein Blick in den <code>Allow</code>-Header der Antwort: Dort steht, welche Methoden erlaubt sind.</p>"
+        },
         "408": {
             "title": "Zzz... 408 - Request Timeout",
             "h2": "Zzz... Zeitüberschreitung",
@@ -91,6 +102,28 @@
             "info_link": "Warum bin ich hier gelandet?",
             "modal_title": "Was bedeutet \"408 Request Timeout\"?",
             "modal_html": "<p>Dieser Fehler tritt auf, wenn dein Browser den Server kontaktiert hat, aber zu lange brauchte, um die tatsächlichen Daten zu senden. Der Server hat schließlich die Geduld verloren und die Verbindung getrennt.</p><ul><li>Deine Internetverbindung ist gerade sehr langsam, instabil oder kurzzeitig abgerissen.</li><li>Du wolltest eine extrem große Datei hochladen, was das Zeitlimit überschritten hat.</li><li>Der Server ist aktuell stark ausgelastet und trennt langsame Verbindungen vorsorglich ab.</li></ul><p><strong>Was kannst du tun?</strong><br>Überprüfe kurz deine WLAN- oder Netzwerkverbindung. Meistens reicht es schon, das kleine Monster aufzuwecken und die Seite einfach neu zu laden!</p>"
+        },
+        "409": {
+            "title": "Streit! 409 - Conflict",
+            "h2": "Zwei wollen dasselbe!",
+            "text": [
+                "Unsere beiden kleinen Monster zerren gleichzeitig am selben Dokument - und keines will loslassen. Deine Anfrage steht leider im Konflikt mit dem aktuellen Zustand auf dem Server!"
+            ],
+            "btn": "Streit schlichten & zurück",
+            "info_link": "Was bedeutet 409?",
+            "modal_title": "Was bedeutet \"409 Conflict\"?",
+            "modal_html": "<p>Ein 409-Fehler bedeutet, dass deine Anfrage zwar gültig war, aber mit dem aktuellen Zustand der Ressource auf dem Server kollidiert. Der Server kann sie deshalb nicht ausführen, ohne Daten zu gefährden.</p><ul><li><strong>Bearbeitungskonflikt:</strong> Zwei Personen bearbeiten gleichzeitig dasselbe Dokument, und eine Version ist inzwischen veraltet.</li><li>Beim Hochladen existiert bereits eine Datei mit demselben Namen.</li><li>Eine Änderung basiert auf einem alten Stand, der inzwischen überschrieben wurde.</li></ul><p><strong>Was kannst du tun?</strong><br>Lade die Seite neu, um den aktuellen Stand zu holen, und führe deine Änderung danach noch einmal durch. Bei Formularen hilft es oft, die Eingaben kurz zu kopieren, bevor du die Seite aktualisierst.</p>"
+        },
+        "410": {
+            "title": "Für immer weg! 410 - Gone",
+            "h2": "Für immer verreist!",
+            "text": [
+                "Unser kleines Monster hat die Koffer gepackt und winkt zum Abschied. Diese Seite gab es früher wirklich - aber sie wurde absichtlich und dauerhaft entfernt. Sie kommt nicht wieder."
+            ],
+            "btn": "Zurück nach Hause",
+            "info_link": "Was ist der Unterschied zu 404?",
+            "modal_title": "Was bedeutet \"410 Gone\"?",
+            "modal_html": "<p>Ein 410-Fehler ist die endgültige Variante des 404: Der Server sagt damit ganz bewusst, dass diese Seite früher existierte, aber <strong>dauerhaft entfernt</strong> wurde und nicht wiederkommt.</p><ul><li><strong>Im Gegensatz zu 404:</strong> Bei einem 404 weiß der Server nur, dass er die Seite nicht findet - vielleicht taucht sie später wieder auf. Bei 410 ist das Verschwinden gewollt und endgültig.</li><li>Typische Fälle: abgelaufene Aktionen oder Stellenanzeigen, gelöschte Beiträge oder bewusst aufgeräumte alte Inhalte.</li><li>Auch Suchmaschinen verstehen den Hinweis und entfernen solche Seiten schneller aus ihrem Index.</li></ul><p><strong>Was kannst du tun?</strong><br>Aktualisiere veraltete Lesezeichen oder Links - hier gibt es nichts mehr zu holen. Über die Startseite findest du bestimmt einen aktuellen Ersatz für den Inhalt.</p>"
         },
         "413": {
             "title": "Uff! 413 - Content Too Large",
@@ -157,6 +190,17 @@
             "info_link": "Warum ist dieser Fehler aufgetreten?",
             "modal_title": "Was bedeutet \"500 Internal Server Error\"?",
             "modal_html": "<p>Ein 500er-Fehler ist ein klassischer Sammelbegriff für: \"Auf dem Server ist gerade etwas unerwartet schiefgelaufen\". Die Website weiß selbst nicht genau, was das Problem ist, nur dass sie deine Anfrage gerade nicht verarbeiten kann.</p><ul><li>Ein Programmierfehler oder ein fehlerhaftes Skript im Code der Website.</li><li>Die im Hintergrund angebundene Datenbank ist kurzzeitig nicht erreichbar.</li><li>Ein fehlerhaftes Update oder ein Plugin verursacht Konflikte im System.</li></ul><p><strong>Was kannst du tun?</strong><br>Meistens liegt das Problem nicht bei dir und die Administratoren arbeiten im Hintergrund bereits an einer Lösung. Lade die Seite in ein paar Minuten neu. Wenn das Problem hartnäckig bleibt, versuche es morgen noch einmal.</p>"
+        },
+        "501": {
+            "title": "Noch nicht erfunden! 501 - Not Implemented",
+            "h2": "Daran wird noch getüftelt!",
+            "text": [
+                "Unser kleines Erfinder-Monster studiert eifrig den Bauplan, aber diese Funktion ist schlicht noch nicht fertig gebaut. Dem Roboter fehlen einfach noch ein paar Teile!"
+            ],
+            "btn": "Zurück zur Startseite",
+            "info_link": "Was bedeutet 501?",
+            "modal_title": "Was bedeutet \"501 Not Implemented\"?",
+            "modal_html": "<p>Ein 501-Fehler bedeutet, dass der Server die Funktionalität, die für deine Anfrage nötig wäre, gar nicht unterstützt - sie ist schlichtweg (noch) nicht implementiert.</p><ul><li><strong>Im Gegensatz zu 405:</strong> Bei 405 kennt der Server die HTTP-Methode, erlaubt sie nur für diese Seite nicht. Bei 501 kann er mit der Methode überhaupt nichts anfangen.</li><li>Es wurde eine sehr exotische oder neue HTTP-Methode verwendet.</li><li>Der Server läuft mit sehr alter oder minimaler Software, die das Feature nicht kennt - oder die Funktion ist noch in Entwicklung.</li></ul><p><strong>Was kannst du tun?</strong><br>Als Besucher kannst du hier leider wenig ausrichten. Versuche es später noch einmal oder informiere den Betreiber der Website - vielleicht ist die Funktion ja bald fertig gebaut.</p>"
         },
         "502": {
             "title": "Oh nein! 502 - Bad Gateway",

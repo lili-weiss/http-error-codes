@@ -28,9 +28,18 @@
 
     if (modal && openBtn && closeBtn) {
         openBtn.addEventListener('click', () => modal.classList.add('active'));
+        openBtn.addEventListener('keydown', (e) => { // Tastatur-Bedienung (Enter/Leertaste)
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                modal.classList.add('active');
+            }
+        });
         closeBtn.addEventListener('click', () => modal.classList.remove('active'));
         modal.addEventListener('click', (e) => {
             if (e.target === modal) modal.classList.remove('active');
+        });
+        document.addEventListener('keydown', (e) => { // Escape schließt das Modal
+            if (e.key === 'Escape') modal.classList.remove('active');
         });
     }
 })();
