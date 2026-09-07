@@ -18,6 +18,7 @@ function e(?string $s): string
  *   'code'             HTTP status code shown in the <h1> (error pages)
  *   'og'               basename of the /og-images/*.png preview image
  *   'css'              page-specific CSS, appended after the shared stylesheet
+ *   'stylesheets'      additional local stylesheet URLs, loaded before 'css'
  *   'scene'            HTML of the monster scene (incl. its shadow)
  *   'background_extra' extra HTML inside the animated background
  *   'codes'            [code => official name] map (gallery grid, home only)

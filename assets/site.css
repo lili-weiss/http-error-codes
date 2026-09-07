@@ -141,6 +141,18 @@ p { font-size: 1.1rem; max-width: 500px; margin: 0 auto 30px auto; line-height: 
     color: #ff99cc;
 }
 
+.status-notice {
+    display: inline-block;
+    padding: 5px 12px;
+    margin: 0 auto 20px;
+    border-radius: 20px;
+    background: #fef3c7;
+    color: #854d0e;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+.status-btn .status-notice { margin: 10px 0 0; }
+
 /* --- Info modal ------------------------------------------------------------ */
 
 .modal-overlay {

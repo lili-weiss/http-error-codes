@@ -16,7 +16,9 @@
     <meta name="robots" content="index, follow">
 
     <meta property="og:type" content="website" />
+<?php if (is_file(__DIR__ . '/../og-images/' . $og . '.png')): ?>
     <meta property="og:image" content="<?= e($base) ?>/og-images/<?= e($og) ?>.png" />
+<?php endif; ?>
     <meta property="og:url" content="<?= e($base . ($id === 'home' ? '' : '/' . $id)) ?>" />
     <meta property="og:title" content="<?= e($title) ?>" />
     <meta property="og:description" content="<?= e($description) ?>" />
@@ -24,6 +26,9 @@
 
     <title><?= e($title) ?></title>
     <link rel="stylesheet" href="/assets/site.css">
+<?php foreach ($page['stylesheets'] ?? [] as $stylesheet): ?>
+    <link rel="stylesheet" href="<?= e($stylesheet) ?>">
+<?php endforeach; ?>
 <?php if (!empty($page['css'])): ?>
     <style>
 <?= $page['css'] ?>
@@ -67,7 +72,7 @@
 
             <div class="grid-container">
 <?php foreach ($page['codes'] ?? [] as $code => $name): ?>
-                <a href="/<?= e((string) $code) ?>" class="status-btn"><strong><?= e((string) $code) ?></strong><span><?= e($name) ?></span></a>
+                <a href="/<?= e((string) $code) ?>" class="status-btn"><strong><?= e((string) $code) ?></strong><span><?= e($name) ?></span><?php if ($notice = t("pages.$code.notice")): ?><small class="status-notice"><?= e($notice) ?></small><?php endif; ?></a>
 <?php endforeach; ?>
             </div>
 
@@ -78,6 +83,9 @@
 <?= $page['scene'] ?? '' ?>
 
             <h2><?= t("pages.$id.h2") ?></h2>
+<?php if ($notice = t("pages.$id.notice")): ?>
+            <p class="status-notice"><?= e($notice) ?></p>
+<?php endif; ?>
 <?php foreach ((array) (t("pages.$id.text") ?? []) as $p): ?>
             <p><?= $p ?></p>
 <?php endforeach; ?>
