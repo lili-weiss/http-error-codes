@@ -1,0 +1,56 @@
+/* Shared stage for the additional 4xx monsters. Individual props live in pages/*.php. */
+.error-container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 640px;
+    padding: 32px 24px;
+}
+.error-container h2 { overflow-wrap: anywhere; }
+.status-scene {
+    position: relative;
+    width: 280px;
+    height: 320px;
+    margin: 0 auto 20px;
+    pointer-events: none;
+}
+.status-scene .monster { position: absolute; top: 85px; left: 40px; margin: 0; }
+.status-scene .shadow { position: absolute; bottom: 5px; left: 65px; margin: 0; }
+.status-scene .prop {
+    position: absolute;
+    box-sizing: border-box;
+    z-index: 12;
+}
+.status-scene .paper {
+    background: #fffdf5;
+    border: 3px solid #c4b5a5;
+    border-radius: 7px;
+    box-shadow: 0 5px 8px #33415515;
+}
+.status-scene .label {
+    color: #475569;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.4;
+    text-align: center;
+}
+.status-scene .question {
+    position: absolute;
+    color: #a78bfa;
+    font-size: 40px;
+    font-weight: 900;
+    text-shadow: 2px 2px white;
+    animation: question-drift 3s ease-in-out infinite;
+}
+@keyframes question-drift {
+    0%, 100% { transform: translateY(0) rotate(-8deg); }
+    50% { transform: translateY(-8px) rotate(8deg); }
+}
+@media (max-width: 380px) {
+    .error-container { padding: 28px 16px; }
+    .status-scene { margin-left: calc(50% - 140px); transform: scale(0.85); }
+    .error-container h2 { font-size: 1.6rem; }
+}
+.modal-content { box-sizing: border-box; max-height: 85vh; overflow-y: auto; }
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+}

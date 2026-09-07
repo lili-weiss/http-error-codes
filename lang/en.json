@@ -1,0 +1,416 @@
+{
+    "common": {
+        "lang_label": "Language",
+        "meta_description": "Welcome to the Monster Gallery! Here you'll find an overview of all the error pages our little monster has designed. Click a button to visit each error page and discover the adventures of our friendly monster. Don't worry, every page was crafted with lots of love!",
+        "keywords": "Monster Gallery, error pages, HTTP status codes, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 421, 422, 423, 424, 425, 426, 428, 429, 431, 451, 500, 501, 502, 503, 504, 508"
+    },
+    "pages": {
+        "home": {
+            "title": "Monster Gallery | Error Pages Overview",
+            "h1": "Wel&shy;come!",
+            "intro": [
+                "Our little monster is overjoyed that you're here. Normally it's not a good sign when you see it and its error pages - but here in its gallery you can browse all of its adventures at your leisure.",
+                "Just click one of the buttons to visit the corresponding error page. Don't worry, the monster designed every page with lots of love - even if they can be a little cheeky sometimes!",
+                "On each error page, the button brings you right back here."
+            ]
+        },
+        "notfound": {
+            "title": "Oh no! 404 - Page Not Found",
+            "h2": "Oh no! Lost?",
+            "text": [
+                "Our little search monster has looked everywhere, but this page simply cannot be found. Maybe it's hiding?",
+                "Our little monster hasn't created a page for this status code (yet), which is why you're seeing this one."
+            ],
+            "btn": "Take me home",
+            "info_link": "How can I add this status code?",
+            "modal_title": "What does \"404 Not Found\" mean?",
+            "modal_html": "<p>A 404 error means the server understood your request but couldn't find the page you asked for. This can happen for several reasons:</p><ul><li>The URL was typed incorrectly.</li><li>The page was deleted or moved.</li><li>The link to this page is outdated.</li></ul><p>Here, this page means we really haven't created an error page for the status code you were looking for yet.</p><p><strong>What can you do?</strong><br>You can help us create this page! Send us an email with the status code (and maybe even an idea for the monster) to <a target=\"_blank\" href=\"mailto:errors@liliweiss.dev\">errors@liliweiss.dev</a>.</p>"
+        },
+        "400": {
+            "title": "Whoops! 400 - Bad Request",
+            "h2": "Huh? What was that?",
+            "text": [
+                "Our little monster is scratching its head in confusion. Unfortunately, your request was faulty or completely incomprehensible to us. Something doesn't quite add up!"
+            ],
+            "btn": "Try again",
+            "info_link": "What does 400 mean?",
+            "modal_title": "What does \"400 Bad Request\" mean?",
+            "modal_html": "<p>A 400 error means the server couldn't process your request. This can happen for several reasons:</p><ul><li>The request contained syntax errors.</li><li>The request was too large or contained invalid data.</li><li>The server couldn't understand the request.</li></ul><p><strong>What can you do?</strong><br>Check the URL for typos, delete any faulty cookies, or try again later. If you're sure everything is correct, it might also be a problem on our end - in that case we apologize and are working on fixing it!</p>"
+        },
+        "401": {
+            "title": "Halt, who goes there? 401 - Unauthorized",
+            "h2": "Halt, who goes there?",
+            "text": [
+                "Our little monster blinks in confusion, because it doesn't know you yet! To get past here, you need the right login key."
+            ],
+            "btn": "To the login page",
+            "info_link": "What does 401 mean?",
+            "modal_title": "What does \"401 Unauthorized\" mean?",
+            "modal_html": "<p>Put simply, a 401 error means: <strong>You are not logged in.</strong> The server doesn't know who it's dealing with and therefore blocks access to protected resources.</p><ul><li><strong>Unlike 403:</strong> With a 403 error (Forbidden), the server knows exactly who you are (you're logged in), but you don't have the necessary rights (e.g. no administrator role).</li><li>With a 401 error, your credentials are simply missing.</li></ul><p><strong>What can you do?</strong><br>You just need to sign in to the website with your username and password. If you were already logged in, your session may have expired and you need to sign in again.</p>"
+        },
+        "402": {
+            "title": "Payment required! 402 - Payment Required",
+            "h2": "Payment required!",
+            "text": [
+                "Oops! It looks like you tried to use a service that requires payment. Our little monster is already patiently holding up its piggy bank, waiting for the first coins to clink."
+            ],
+            "btn": "Pay now",
+            "info_link": "What does 'Payment Required' mean?",
+            "modal_title": "What does '402 Payment Required' mean?",
+            "modal_html": "<p>A 402 error is a rare HTTP status code indicating that payment is required to complete the request. It's often used by payment gateways or subscription services to make sure billing is handled correctly.</p><ul><li><strong>Payment service:</strong> The website or API service requires an active subscription or a one-time payment.</li><li><strong>Credit card verification:</strong> The card on file couldn't be charged or has expired.</li></ul><p><strong>What can you do?</strong><br>Make sure your payment information is up to date and that your credit card hasn't expired. If you have a subscription, check whether it's active.</p>"
+        },
+        "403": {
+            "title": "Stop! 403 - Access Denied",
+            "h2": "Stop! No entry",
+            "text": [
+                "Our little guard monster takes its job very seriously. Unfortunately, you don't have the right key to enter this area."
+            ],
+            "btn": "Back to safe territory",
+            "info_link": "Why am I locked out?",
+            "modal_title": "What does \"403 Forbidden\" mean?",
+            "modal_html": "<p>A 403 error means the server understood your request but refuses to grant you access. This can happen for several reasons:</p><ul><li>You are <strong>not logged in</strong> or are using the wrong account.</li><li>You lack the necessary <strong>permissions</strong> (e.g. admin rights) for this specific page.</li><li>Your IP address was blocked for security reasons.</li></ul><p><strong>What can you do?</strong><br>First check whether you're logged in correctly. If you're sure you should have access, it's best to contact the website's administrator directly.</p>"
+        },
+        "404": {
+            "title": "Oh no! 404 - Page Not Found",
+            "h2": "Oh no! Lost?",
+            "text": [
+                "Our little search monster has looked everywhere, but this page simply cannot be found. Maybe it's hiding?"
+            ],
+            "btn": "Take me home",
+            "info_link": "Where is the page?",
+            "modal_title": "What does \"404 Not Found\" mean?",
+            "modal_html": "<p>A 404 error means the server understood your request but couldn't find the page you asked for. This can happen for several reasons:</p><ul><li>The URL was typed incorrectly.</li><li>The page was deleted or moved.</li><li>The link to this page is outdated.</li></ul><p><strong>What can you do?</strong><br>Check the URL for typos, go back to the home page, or use the navigation to find the information you're looking for. If you think this is a mistake, please contact support.</p>"
+        },
+        "405": {
+            "title": "Wrong way! 405 - Method Not Allowed",
+            "h2": "You can't get in this way!",
+            "text": [
+                "Our little bouncer monster shakes its head firmly and crosses its arms. The page does exist - but the way you tried to get in is not allowed at this entrance!"
+            ],
+            "btn": "Back to the main entrance",
+            "info_link": "What does 405 mean?",
+            "modal_title": "What does \"405 Method Not Allowed\" mean?",
+            "modal_html": "<p>Every request to a server uses a so-called HTTP method (e.g. GET to retrieve or POST to send data). A 405 error means: the requested page exists, but the method used is not allowed for it.</p><ul><li>A form sends data via POST to an address that only accepts GET (or vice versa).</li><li>An API is called with a method (e.g. DELETE or PUT) that isn't supported there.</li><li>The server is configured to block certain methods for security reasons.</li></ul><p><strong>What can you do?</strong><br>As a regular visitor you'll rarely end up here - usually it's enough to simply open the page again via the normal navigation. As a developer, take a look at the <code>Allow</code> header of the response: it tells you which methods are permitted.</p>"
+        },
+        "406": {
+            "title": "Not to my taste! 406 - Not Acceptable",
+            "h2": "Not to my taste!",
+            "text": [
+                "Our little monster ordered XML, but there's only JSON on the plate. It sends the data menu straight back: “I'm not eating that!”"
+            ],
+            "btn": "Back to the menu",
+            "info_link": "What does 406 mean?",
+            "modal_title": "What does “406 Not Acceptable” mean?",
+            "modal_html": "<p>The server cannot provide a response in a form your request accepts. Headers such as <code>Accept</code> or <code>Accept-Language</code> describe the client's preferences, but none of the available versions match.</p><p><strong>What can you do?</strong><br>For an API, check the Accept headers and allow a supported format. As a visitor, try the normal link to the page or let the website operator know.</p>"
+        },
+        "407": {
+            "title": "ID, please – at the first gate! 407 - Proxy Authentication Required",
+            "h2": "ID, please – at the first gate!",
+            "text": [
+                "Our proxy monster guards the barrier in front of the actual server. Your website login is lovely, but this little gatekeeper wants an ID of its own!"
+            ],
+            "btn": "Back to the gallery",
+            "info_link": "What does 407 mean?",
+            "modal_title": "What does “407 Proxy Authentication Required” mean?",
+            "modal_html": "<p>An intermediary proxy requires authentication before forwarding your request. Unlike 401, this concerns access to the proxy, rather than your login on the destination website.</p><p><strong>What can you do?</strong><br>Check your browser or network's proxy settings and credentials. At work or school, ask IT for help. The proxy specifies an authentication scheme in <code>Proxy-Authenticate</code>; the client responds using <code>Proxy-Authorization</code>.</p>"
+        },
+        "408": {
+            "title": "Zzz... 408 - Request Timeout",
+            "h2": "Zzz... Timed out",
+            "text": [
+                "Our little monster waited so long for your data that it fell fast asleep! Unfortunately, the connection suffered a timeout."
+            ],
+            "btn": "Wake up & reload",
+            "info_link": "Why did I end up here?",
+            "modal_title": "What does \"408 Request Timeout\" mean?",
+            "modal_html": "<p>This error occurs when your browser contacted the server but took too long to send the actual data. The server eventually lost patience and closed the connection.</p><ul><li>Your internet connection is currently very slow, unstable, or briefly dropped out.</li><li>You tried to upload an extremely large file, which exceeded the time limit.</li><li>The server is currently under heavy load and preemptively disconnects slow connections.</li></ul><p><strong>What can you do?</strong><br>Quickly check your Wi-Fi or network connection. Usually it's enough to wake the little monster up and simply reload the page!</p>"
+        },
+        "409": {
+            "title": "Quarrel! 409 - Conflict",
+            "h2": "Two want the same thing!",
+            "text": [
+                "Both of our little monsters are tugging at the same document at the same time - and neither wants to let go. Unfortunately, your request conflicts with the current state on the server!"
+            ],
+            "btn": "Settle the quarrel & go back",
+            "info_link": "What does 409 mean?",
+            "modal_title": "What does \"409 Conflict\" mean?",
+            "modal_html": "<p>A 409 error means your request was valid, but it collides with the current state of the resource on the server. The server therefore can't carry it out without putting data at risk.</p><ul><li><strong>Editing conflict:</strong> Two people are editing the same document at the same time, and one version has become outdated.</li><li>A file with the same name already exists when uploading.</li><li>A change is based on an old state that has since been overwritten.</li></ul><p><strong>What can you do?</strong><br>Reload the page to get the latest state, then apply your change again. With forms, it often helps to quickly copy your input before refreshing the page.</p>"
+        },
+        "410": {
+            "title": "Gone for good! 410 - Gone",
+            "h2": "Gone for good!",
+            "text": [
+                "Our little monster has packed its bags and is waving goodbye. This page really did exist once - but it has been removed deliberately and permanently. It won't be coming back."
+            ],
+            "btn": "Take me home",
+            "info_link": "How is this different from 404?",
+            "modal_title": "What does \"410 Gone\" mean?",
+            "modal_html": "<p>A 410 error is the definitive version of a 404: the server is deliberately telling you that this page used to exist, but has been <strong>permanently removed</strong> and won't return.</p><ul><li><strong>Unlike 404:</strong> With a 404, the server only knows it can't find the page - it might reappear later. With 410, the disappearance is intentional and final.</li><li>Typical cases: expired promotions or job listings, deleted posts, or old content that was deliberately cleaned up.</li><li>Search engines understand the hint too, and remove such pages from their index more quickly.</li></ul><p><strong>What can you do?</strong><br>Update outdated bookmarks or links - there's nothing left to find here. You're sure to find an up-to-date replacement for the content via the home page.</p>"
+        },
+        "411": {
+            "title": "How long is “roughly”? 411 - Length Required",
+            "h2": "How long is “roughly”?",
+            "text": [
+                "Our little monster gets out the measuring tape, but your data parcel has no length on the label. “About this much” isn't an internet unit of measurement!"
+            ],
+            "btn": "Back to the packing station",
+            "info_link": "What does 411 mean?",
+            "modal_title": "What does “411 Length Required” mean?",
+            "modal_html": "<p>The server requires a <code>Content-Length</code> header and rejects a request without it. This header specifies the request content's length in bytes.</p><p><strong>What can you do?</strong><br>If you develop an API client, let your HTTP library set the correct length. Don't just count characters or guess a number: a UTF-8 character can occupy several bytes. As a visitor, report the issue to the website operator.</p>"
+        },
+        "412": {
+            "title": "Yesterday's plan! 412 - Precondition Failed",
+            "h2": "Yesterday's plan!",
+            "text": [
+                "Our little monster checks your list carefully: “Version 2 only!” Well, this is version 3 now. Looks like reality installed an update behind your back."
+            ],
+            "btn": "Back to the drawing board",
+            "info_link": "What does 412 mean?",
+            "modal_title": "What does “412 Precondition Failed” mean?",
+            "modal_html": "<p>A precondition sent with your request is false. For example, <code>If-Match</code> allows an update only for a specific version, but someone has already changed the resource. The server prevents you from overwriting their edits.</p><p><strong>What can you do?</strong><br>Fetch the latest version, reconcile your changes and retry with the appropriate version value. With 412 a condition was supplied but failed; with 428 a required condition is missing.</p>"
+        },
+        "413": {
+            "title": "Oof! 413 - Content Too Large",
+            "h2": "Oof! A real heavyweight",
+            "text": [
+                "Our little monster is pushing back with all its might, but the file you tried to send is simply way too huge and heavy for the server!"
+            ],
+            "btn": "Shrink luggage & go back",
+            "info_link": "What does \"Content Too Large\" mean?",
+            "modal_title": "What does \"413 Content Too Large\" mean?",
+            "modal_html": "<p>A 413 error occurs when you try to send data to the server that completely exceeds the predefined size limit.</p><ul><li>You tried to upload a high-resolution image or a very long video that the server isn't built for.</li><li>The web server (e.g. Nginx or Apache) blocks overly large data packets for security reasons, to prevent memory overload.</li></ul><p><strong>What can you do?</strong><br>Check the size of your file. It often helps to compress images or split large amounts of data into several smaller packages (e.g. ZIP archives) before starting the upload again.</p>"
+        },
+        "414": {
+            "title": "This address needs its own postcode! 414 - URI Too Long",
+            "h2": "This address needs its own postcode!",
+            "text": [
+                "Our little monster unrolled the address. And unrolled it. And unrolled it. Now it's wrapped in the thing, and the other end apparently lives in a different time zone."
+            ],
+            "btn": "Take the short way home",
+            "info_link": "What does 414 mean?",
+            "modal_title": "What does “414 URI Too Long” mean?",
+            "modal_html": "<p>Your request URI is longer than the server is willing to process. Common causes include too many query parameters, long filter lists or entire data payloads accidentally packed into the address.</p><p><strong>What can you do?</strong><br>Use a shorter link or reduce your filters. In an API you develop, send large inputs in the request content of an appropriate method, such as POST, if the API supports it. A growing chain of redirects can also cause this error.</p>"
+        },
+        "415": {
+            "title": "A record in the file slot? 415 - Unsupported Media Type",
+            "h2": "A record in the file slot?",
+            "text": [
+                "Our little monster bravely tries to squeeze a vinyl record into the JSON slot. The music is probably great, but this machine plays a different format!"
+            ],
+            "btn": "Back to the format selection",
+            "info_link": "What does 415 mean?",
+            "modal_title": "What does “415 Unsupported Media Type” mean?",
+            "modal_html": "<p>The server does not support the format of the request content for this action. The cause may be an unsuitable <code>Content-Type</code>, an unsupported content encoding or the actual data format.</p><p><strong>What can you do?</strong><br>Send a format the API supports, with the correct header. Labelling an XML file “JSON” won't turn it into JSON. 415 concerns content you send; 406 concerns the response format you request.</p>"
+        },
+        "416": {
+            "title": "That slice of cake doesn't exist! 416 - Range Not Satisfiable",
+            "h2": "That slice of cake doesn't exist!",
+            "text": [
+                "Our little monster already has its fork ready. You asked for slice 200, but the cake ends at 99. Even the most optimistic crumb hunt won't help here."
+            ],
+            "btn": "Back to the whole cake",
+            "info_link": "What does 416 mean?",
+            "modal_title": "What does “416 Range Not Satisfiable” mean?",
+            "modal_html": "<p>The requested range of a resource cannot be served. A <code>Range</code> header might ask for bytes beyond the end of a file. Invalid ranges or an excessive number of small ranges can also be rejected.</p><p><strong>What can you do?</strong><br>Restart an interrupted download if necessary. For an API, check the current file size and range boundaries. A response such as <code>Content-Range: bytes */100</code> can indicate that the complete resource is 100 bytes long.</p>"
+        },
+        "417": {
+            "title": "Big magic, empty hat! 417 - Expectation Failed",
+            "h2": "Big magic, empty hat!",
+            "text": [
+                "Our little magician promised three sparkling miracles. It waves its wand, peeks into the hat … and finds air. Your expectations were just a little too magical!"
+            ],
+            "btn": "Back from the magic show",
+            "info_link": "What does 417 mean?",
+            "modal_title": "What does “417 Expectation Failed” mean?",
+            "modal_html": "<p>At least one server involved cannot meet an expectation in the <code>Expect</code> header. For example, <code>Expect: 100-continue</code> lets a client wait for a preliminary okay before sending the request content.</p><p><strong>What can you do?</strong><br>Check your HTTP client's Expect setting and whether intermediate proxies support it. If a 100-continue expectation is rejected, the client can resend the request without that Expect header. As a visitor, let the website operator know.</p>"
+        },
+        "418": {
+            "title": "Time for tea! 418 - I'm a Teapot",
+            "h2": "I'm a Teapot!",
+            "text": [
+                "You actually wanted to brew coffee, but our little monster is a teapot today! Sit back, relax, and enjoy a delightful virtual cup of Earl Grey."
+            ],
+            "btn": "End tea time",
+            "info_link": "When will there be coffee again?",
+            "modal_title": "What does \"418 I'm a Teapot\" mean?",
+            "modal_html": "<p>This error code is actually a historic internet joke! It comes from an official April Fools' prank by the Internet Engineering Task Force (IETF) in 1998, which defined a protocol for controlling coffee machines.</p><ul><li>You are obviously trying to brew coffee with a teapot.</li><li>The developer of this website has a sense of humor and hid this code as a little \"Easter egg\".</li></ul><p><strong>What can you do?</strong><br>Technically, there's nothing to fix here! Make yourself a nice cup of tea, sit back, and click the button to return to the regular home page.</p>"
+        },
+        "421": {
+            "title": "Right letter, wrong doorstep! 421 - Misdirected Request",
+            "h2": "Right letter, wrong doorstep!",
+            "text": [
+                "Our little mail monster is standing at server B with your letter. The envelope clearly says server A. Meanwhile, the satnav insists: “You have reached your destination.”"
+            ],
+            "btn": "Back to the signpost",
+            "info_link": "What does 421 mean?",
+            "modal_title": "What does “421 Misdirected Request” mean?",
+            "modal_html": "<p>The request reached a server that cannot or will not provide a response for the requested address. This can happen when a connection is reused for multiple hostnames but the server does not support that combination.</p><p><strong>What can you do?</strong><br>Retrying over a new connection may help. If the error persists, the operator should check the mapping between hostnames, virtual hosts and proxies.</p>"
+        },
+        "422": {
+            "title": "Doesn't fit! 422 - Unprocessable Content",
+            "h2": "That doesn't fit in here!",
+            "text": [
+                "Our monster is hammering with all its might, but this square block of data just won't fit into the round hole. Unfortunately, your input doesn't make sense here!"
+            ],
+            "btn": "Correct input",
+            "info_link": "What does \"Unprocessable Content\" mean?",
+            "modal_title": "What does \"422 Unprocessable Content\" mean?",
+            "modal_html": "<p>With this error, the server understood the format of your request (which is why it's not a \"Bad Request\"), but couldn't process its content. The submitted data violates the website's logical rules.</p><ul><li>For example, you entered letters into a numbers-only field (like a postal code).</li><li>A mandatory required field was accidentally left empty when submitting a form.</li><li>A password doesn't meet the required security policies (too short, no special characters).</li></ul><p><strong>What can you do?</strong><br>The server doesn't know what to do with this illogical data. Go back one step and double-check the form data you entered for logical errors or typos.</p>"
+        },
+        "423": {
+            "title": "Locked. Key elsewhere. 423 - Locked",
+            "h2": "Locked. Key elsewhere.",
+            "text": [
+                "Our little monster rattles the chain. The file is locked, and someone else has the key right now. Even its most persuasive puppy-monster eyes won't pick this lock!"
+            ],
+            "btn": "Back to the doorstep",
+            "info_link": "What does 423 mean?",
+            "modal_title": "What does “423 Locked” mean?",
+            "modal_html": "<p>The resource is locked. This status comes from WebDAV, an HTTP extension for editing files. A lock can protect a document from simultaneous changes while someone is working on it.</p><p><strong>What can you do?</strong><br>Wait until editing is finished and the lock is released. If you hold the lock yourself, your WebDAV client needs to send the appropriate lock token. An administrator can help with an abandoned lock.</p>"
+        },
+        "424": {
+            "title": "The first domino has other plans! 424 - Failed Dependency",
+            "h2": "The first domino has other plans!",
+            "text": [
+                "Our little monster is waiting for the big domino moment. But something already went wrong at the start. Domino two stays put and declares it somebody else's problem."
+            ],
+            "btn": "Back to the first domino",
+            "info_link": "What does 424 mean?",
+            "modal_title": "What does “424 Failed Dependency” mean?",
+            "modal_html": "<p>The action depends on another action that failed. This status comes from WebDAV and can occur with related changes: if a necessary step fails, dependent steps cannot be completed.</p><p><strong>What can you do?</strong><br>Find and resolve the original failure in the response or logs first. Repeating the dependent step unchanged will not fix the prerequisite it relies on.</p>"
+        },
+        "425": {
+            "title": "False start, little monster! 425 - Too Early",
+            "h2": "False start, little monster!",
+            "text": [
+                "Our racing monster has already hopped forward, but the starting light is still red. Wait for the secure connection to finish – we don't want to count your starting signal twice!"
+            ],
+            "btn": "Back to the starting line",
+            "info_link": "What does 425 mean?",
+            "modal_title": "What does “425 Too Early” mean?",
+            "modal_html": "<p>The server rejects a request sent as early data during TLS connection setup because it could be replayed. This helps prevent an action from being carried out more than once unintentionally.</p><p><strong>What can you do?</strong><br>The client should retry once the TLS handshake is complete, without using early data. This is not about a website opening later or an ordinary waiting period.</p><p><strong>Limited availability:</strong> This status is not supported by all widely used browsers.</p>",
+            "notice": "Limited availability"
+        },
+        "426": {
+            "title": "Time for the next gear! 426 - Upgrade Required",
+            "h2": "Time for the next gear!",
+            "text": [
+                "Our little monster has strapped on its jetpack, but this old protocol can only manage a tired pfffft. The next flight needs an upgrade first!"
+            ],
+            "btn": "Back to the workshop",
+            "info_link": "What does 426 mean?",
+            "modal_title": "What does “426 Upgrade Required” mean?",
+            "modal_html": "<p>The server refuses the request using the current protocol, but may accept it after a protocol change. Its <code>Upgrade</code> header identifies the required protocol.</p><p><strong>What can you do?</strong><br>Check which protocol the response requires and whether your client supports it. You may need to update the client or connection configuration. This means a technical protocol upgrade, not a paid account upgrade.</p>"
+        },
+        "428": {
+            "title": "Fill in the small print first! 428 - Precondition Required",
+            "h2": "Fill in the small print first!",
+            "text": [
+                "Our little monster hands you a form and a pencil. The “Only change if…” field is still empty. No sentence, no stamp – even monster paperwork has standards!"
+            ],
+            "btn": "Back to the forms desk",
+            "info_link": "What does 428 mean?",
+            "modal_title": "What does “428 Precondition Required” mean?",
+            "modal_html": "<p>The server requires a conditional request to prevent accidental overwrites. For an update, it may require <code>If-Match</code> with the current ETag as proof of the version you intend to change.</p><p><strong>What can you do?</strong><br>Fetch the resource and its version information, then include the required condition with your update. With 428 the required precondition is missing; with 412 it was supplied but is not true.</p>"
+        },
+        "429": {
+            "title": "Slow down! 429 - Too Many Requests",
+            "h2": "Slow down, slow down!",
+            "text": [
+                "Our little monster is being downright bombarded with requests and can't keep up with processing them anymore. Give it a little break!"
+            ],
+            "btn": "Take a breath & reload",
+            "info_link": "Why am I blocked?",
+            "modal_title": "What does \"429 Too Many Requests\" mean?",
+            "modal_html": "<p>This status code is a deliberate protective measure by the server – known as <strong>rate limiting</strong>. Especially when custom interfaces – such as a complex server application – are connected in the background, this protection is extremely important so the server doesn't collapse under the load.</p><ul><li>You clicked too often in a very short time or reloaded the page too quickly several times.</li><li>An automated script or a plugin in your browser is sending too many requests at once in the background.</li></ul><p><strong>What can you do?</strong><br>The solution is remarkably simple: wait! The system usually lifts this block automatically after a few seconds or minutes.</p>"
+        },
+        "431": {
+            "title": "That hat is a size too big! 431 - Request Header Fields Too Large",
+            "h2": "That hat is a size too big!",
+            "text": [
+                "Our little monster is stacking your headers on its head. One more cookie, one more note … now the hat won't fit through the door. The hairstyle underneath is completely innocent!"
+            ],
+            "btn": "Back to the hat stand",
+            "info_link": "What does 431 mean?",
+            "modal_title": "What does “431 Request Header Fields Too Large” mean?",
+            "modal_html": "<p>One request header field or the entire set of request headers is too large. Common causes include oversized cookies or extra custom headers. This concerns the accompanying information, not the size of an uploaded file.</p><p><strong>What can you do?</strong><br>Review and reduce unnecessary headers. As a visitor, clearing cookies for the affected website may help, although it can sign you out there. If the problem persists, the operator should investigate the cause.</p>"
+        },
+        "451": {
+            "title": "Blocked! 451 - Unavailable For Legal Reasons",
+            "h2": "Blocked for legal reasons",
+            "text": [
+                "Our little monster has received an official order and takes the law very seriously. Unfortunately, this content had to be blocked."
+            ],
+            "btn": "Back to legality",
+            "info_link": "Why is this content blocked?",
+            "modal_title": "What does \"451 Unavailable for Legal Reasons\" mean?",
+            "modal_html": "<p>This code indicates that the server had to block the requested page for legal reasons. Incidentally, the number 451 is a clever nod to the dystopian novel \"Fahrenheit 451\", which is about censorship.</p><ul><li>A court order or an official government directive is blocking this specific page.</li><li>There is a copyright infringement or a violation of other legal provisions.</li><li>Certain content is not legally permitted in your current region.</li></ul><p><strong>What can you do?</strong><br>Unfortunately, as a user you have no direct way to solve the problem. You can only come back later to see whether the legal block has been lifted.</p>"
+        },
+        "500": {
+            "title": "Oopsy! 500 - Server Hiccup",
+            "h2": "Oopsy! A little malfunction",
+            "text": [
+                "Our little monster is scratching its head in confusion. Something went terribly wrong in the server room and the machine is smoking! We're already tinkering on it."
+            ],
+            "btn": "Back to safe territory",
+            "info_link": "Why did this error occur?",
+            "modal_title": "What does \"500 Internal Server Error\" mean?",
+            "modal_html": "<p>A 500 error is a classic catch-all for: \"Something unexpectedly went wrong on the server\". The website itself doesn't know exactly what the problem is, only that it can't process your request right now.</p><ul><li>A programming error or a faulty script in the website's code.</li><li>The database connected in the background is temporarily unreachable.</li><li>A faulty update or a plugin is causing conflicts in the system.</li></ul><p><strong>What can you do?</strong><br>Usually the problem isn't on your end, and the administrators are already working on a solution behind the scenes. Reload the page in a few minutes. If the problem persists, try again tomorrow.</p>"
+        },
+        "501": {
+            "title": "Not invented yet! 501 - Not Implemented",
+            "h2": "Still tinkering on this one!",
+            "text": [
+                "Our little inventor monster is eagerly studying the blueprint, but this feature simply hasn't been fully built yet. The robot is still missing a few parts!"
+            ],
+            "btn": "Back to the home page",
+            "info_link": "What does 501 mean?",
+            "modal_title": "What does \"501 Not Implemented\" mean?",
+            "modal_html": "<p>A 501 error means the server doesn't support the functionality required to fulfill your request at all - it simply hasn't been implemented (yet).</p><ul><li><strong>Unlike 405:</strong> With 405, the server knows the HTTP method but just doesn't allow it for this page. With 501, it can't handle the method at all.</li><li>A very exotic or brand-new HTTP method was used.</li><li>The server runs very old or minimal software that doesn't know the feature - or the feature is still under development.</li></ul><p><strong>What can you do?</strong><br>As a visitor there's unfortunately little you can do here. Try again later or let the website operator know - maybe the feature will be finished soon.</p>"
+        },
+        "502": {
+            "title": "Oh no! 502 - Bad Gateway",
+            "h2": "Connection interrupted!",
+            "text": [
+                "Our little monster is desperately trying to plug the cables together, but the server in the background simply isn't responding properly."
+            ],
+            "btn": "Reconnect",
+            "info_link": "What does this error mean?",
+            "modal_title": "What does \"502 Bad Gateway\" mean?",
+            "modal_html": "<p>A 502 error occurs when a server on the internet acts as a \"doorman\" or middleman (a proxy or gateway) and tries to fetch the necessary data from another server in the background.</p><ul><li>The background server (upstream) is currently restarting or receiving an update.</li><li>The connection between the two servers is blocked.</li><li>The background server's response was faulty.</li></ul><p><strong>What can you do?</strong><br>Often this is just a very brief, temporary problem during maintenance. Simply reload the page after a minute or two.</p>"
+        },
+        "503": {
+            "title": "Maintenance! 503 - Service Unavailable",
+            "h2": "Back in a moment!",
+            "text": [
+                "Our server monster has put on its hard hat and is working diligently behind the scenes. We're currently carrying out important maintenance and will be back shortly."
+            ],
+            "btn": "Reload page",
+            "info_link": "Why is the page unavailable?",
+            "modal_title": "What does \"503 Service Unavailable\" mean?",
+            "modal_html": "<p>This status code is basically the internet's \"Closed for renovation\" sign. The server is working fine in principle, but is currently simply unable to handle new requests.</p><ul><li>The website is undergoing scheduled maintenance or important updates are being installed.</li><li>The server is completely overloaded by unexpectedly many visitors and needs a short break.</li></ul><p><strong>What can you do?</strong><br>The best solution here is patience. Simply try reloading the page via our button in a few minutes. As soon as the maintenance is finished or the rush dies down, the page will be back.</p>"
+        },
+        "504": {
+            "title": "Time's up! 504 - Gateway Timeout",
+            "h2": "Time has run out!",
+            "text": [
+                "Our little monster is visibly bored by now. It must have flipped the hourglass three times already, but the server in the background simply isn't answering."
+            ],
+            "btn": "Reload",
+            "info_link": "Who isn't answering?",
+            "modal_title": "What does \"504 Gateway Timeout\" mean?",
+            "modal_html": "<p>A 504 error occurs when the server you're contacting (the gateway) had to wait too long for a response from another server in the background to process your request. The first server eventually lost patience and closed the connection.</p><ul><li>The other server is currently under heavy load or undergoing maintenance.</li><li>A database in the background is running far too slowly.</li><li>Network problems between the servers are preventing timely communication.</li></ul><p><strong>What can you do?</strong><br>Unfortunately, the problem isn't on your end. The best solution here is patience. It's often a temporary problem that resolves within a few minutes. Simply try reloading the page!</p>"
+        },
+        "508": {
+            "title": "Infinite loop! 508 - Loop Detected",
+            "h2": "Infinite loop detected!",
+            "text": [
+                "Our little monster runs and runs in its hamster wheel, but doesn't get anywhere. The server got caught in an endless redirect loop!"
+            ],
+            "btn": "Step out of the wheel",
+            "info_link": "What is an infinite loop?",
+            "modal_title": "What does \"508 Loop Detected\" mean?",
+            "modal_html": "<p>A 508 error happens when the server gets caught in an endless cycle (loop) while processing your request and automatically breaks the chain to avoid crashing completely.</p><ul><li><strong>Redirect loop:</strong> Page A automatically redirects to page B, and page B immediately redirects back to page A.</li><li>The server configuration (e.g. `.htaccess`) contains a self-repeating or faulty directive.</li></ul><p><strong>What can you do?</strong><br>Since redirects are often stored in your browser cache, it sometimes helps to <strong>clear your cookies and cache</strong>. If that doesn't help, there's a configuration error on the website operator's side.</p>"
+        }
+    }
+}
