@@ -2,7 +2,7 @@
     "common": {
         "lang_label": "Language",
         "meta_description": "Welcome to the Monster Gallery! Here you'll find an overview of all the error pages our little monster has designed. Click a button to visit each error page and discover the adventures of our friendly monster. Don't worry, every page was crafted with lots of love!",
-        "keywords": "Monster Gallery, error pages, HTTP status codes, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 421, 422, 423, 424, 425, 426, 428, 429, 431, 451, 500, 501, 502, 503, 504, 508"
+        "keywords": "Monster Gallery, error pages, HTTP status codes, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 421, 422, 423, 424, 425, 426, 428, 429, 431, 451, 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, 511"
     },
     "pages": {
         "home": {
@@ -401,6 +401,39 @@
             "modal_title": "What does \"504 Gateway Timeout\" mean?",
             "modal_html": "<p>A 504 error occurs when the server you're contacting (the gateway) had to wait too long for a response from another server in the background to process your request. The first server eventually lost patience and closed the connection.</p><ul><li>The other server is currently under heavy load or undergoing maintenance.</li><li>A database in the background is running far too slowly.</li><li>Network problems between the servers are preventing timely communication.</li></ul><p><strong>What can you do?</strong><br>Unfortunately, the problem isn't on your end. The best solution here is patience. It's often a temporary problem that resolves within a few minutes. Simply try reloading the page!</p>"
         },
+        "505": {
+            "title": "On the wrong HTTP wavelength! 505 - HTTP Version Not Supported",
+            "h2": "On the wrong HTTP wavelength!",
+            "text": [
+                "Our little radio monster can only hear “Beep, bzzzt, HTTP/3”. But its handbook says HTTP/1.1. Speaking louder won't help when everyone uses a different protocol dialect!"
+            ],
+            "btn": "Back to the right frequency",
+            "info_link": "What does 505 mean?",
+            "modal_title": "What does “505 HTTP Version Not Supported” mean?",
+            "modal_html": "<p>The server does not support the HTTP major version used by your request, or refuses to use it. This concerns the transfer protocol version, not a file format or the website's version.</p><p><strong>What can you do?</strong><br>For a client you develop, check which HTTP versions the client, server and intermediary proxies support, and use a shared version. As a visitor, let the website operator know. The software involved may need updating, or the server configuration may need correcting.</p>"
+        },
+        "506": {
+            "title": "Today's special: more choices! 506 - Variant Also Negotiates",
+            "h2": "Today's special: more choices!",
+            "text": [
+                "Our little waiter serves your chosen menu. Unfortunately, it only lists which menu to choose next. Negotiations are going wonderfully. Dinner is never coming."
+            ],
+            "btn": "Back from the menu",
+            "info_link": "What does 506 mean?",
+            "modal_title": "What does “506 Variant Also Negotiates” mean?",
+            "modal_html": "<p>Transparent content negotiation lets the server select a suitable variant, such as a language version. However, the chosen variant is itself configured to negotiate again. It therefore cannot act as a valid endpoint that delivers the actual content.</p><p><strong>What can you do?</strong><br>As a visitor, let the website operator know. They need to correct the variant configuration so that selection points to a concrete resource. This is a server configuration error.</p>"
+        },
+        "507": {
+            "title": "The file suitcase is bursting! 507 - Insufficient Storage",
+            "h2": "The file suitcase is bursting!",
+            "text": [
+                "Our little monster pushes down on the suitcase with both hands. Surely one more file will … nope. The server has run out of room. Even the emergency sock drawer is full!"
+            ],
+            "btn": "Back to the luggage rack",
+            "info_link": "What does 507 mean?",
+            "modal_title": "What does “507 Insufficient Storage” mean?",
+            "modal_html": "<p>The server cannot store the information needed to complete your request. This WebDAV status describes a temporary storage problem on the server, for example because its storage is full or a quota has been reached.</p><p><strong>What can you do?</strong><br>The operator needs to free storage, check the quota or provide more capacity. Try your action again once the problem is resolved. Free space on your own device will not fix the server's storage shortage.</p>"
+        },
         "508": {
             "title": "Infinite loop! 508 - Loop Detected",
             "h2": "Infinite loop detected!",
@@ -411,6 +444,29 @@
             "info_link": "What is an infinite loop?",
             "modal_title": "What does \"508 Loop Detected\" mean?",
             "modal_html": "<p>A 508 error happens when the server gets caught in an endless cycle (loop) while processing your request and automatically breaks the chain to avoid crashing completely.</p><ul><li><strong>Redirect loop:</strong> Page A automatically redirects to page B, and page B immediately redirects back to page A.</li><li>The server configuration (e.g. `.htaccess`) contains a self-repeating or faulty directive.</li></ul><p><strong>What can you do?</strong><br>Since redirects are often stored in your browser cache, it sometimes helps to <strong>clear your cookies and cache</strong>. If that doesn't help, there's a configuration error on the website operator's side.</p>"
+        },
+        "510": {
+            "title": "The extension piece is missing! 510 - Not Extended",
+            "h2": "The extension piece is missing!",
+            "text": [
+                "Our little tinkerer has almost finished its HTTP construction kit. Almost. This request still needs the required extension piece – and the instructions are already in a technology museum!"
+            ],
+            "btn": "Back to the workbench",
+            "info_link": "What does 510 mean?",
+            "modal_title": "What does “510 Not Extended” mean?",
+            "modal_html": "<p>This historical status comes from the HTTP Extension Framework. The request does not meet the resource's extension requirements. For example, a required extension declaration may be missing, or a mandatory extension may not be supported.</p><p><strong>What can you do?</strong><br>For a legacy system, the operator should check the required extensions and their support. This concerns HTTP extensions, not a browser extension you should install.</p><p><strong>Obsolete:</strong> The underlying experiment was moved to Historic status, and IANA now lists 510 as “Obsoleted”. It remains in this gallery for completeness.</p>",
+            "notice": "Obsolete · historical status code"
+        },
+        "511": {
+            "title": "Wi-Fi: yes. Internet: not yet. 511 - Network Authentication Required",
+            "h2": "Wi-Fi: yes. Internet: not yet.",
+            "text": [
+                "Our little monster has full Wi-Fi signal and is proudly waving its access slip. But the network wants a login first. Four bars still don't count as an admission ticket!"
+            ],
+            "btn": "Back to the Wi-Fi gate",
+            "info_link": "What does 511 mean?",
+            "modal_title": "What does “511 Network Authentication Required” mean?",
+            "modal_html": "<p>The network requires authentication before granting internet access. A login portal at a hotel, airport or guest Wi-Fi network is a typical example. The response comes from a network access control system, not from the website you intended to visit.</p><p><strong>What can you do?</strong><br>Open the login page using your device's Wi-Fi sign-in prompt, then complete the login or accept the network's terms. If that fails, contact the network operator. Your login credentials for the destination website are not what is needed here.</p>"
         }
     }
 }

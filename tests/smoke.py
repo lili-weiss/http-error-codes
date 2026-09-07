@@ -17,7 +17,10 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE = sys.argv[1] if len(sys.argv) > 1 else 'http://127.0.0.1:8091'
 # Assigned 4xx statuses, plus the gallery's existing 418 teapot.
 CLIENT_CODES = [*range(400, 419), *range(421, 427), 428, 429, 431, 451]
-NEW_CODES = [406, 407, 411, 412, 414, 415, 416, 417, 421, 423, 424, 425, 426, 428, 431]
+# Assigned 5xx statuses, including the historical 510; 509 is unassigned.
+SERVER_CODES = [*range(500, 509), 510, 511]
+SCENE_CODES = [406, 407, 411, 412, 414, 415, 416, 417, 421, 423, 424, 425, 426, 428, 431, 505, 506, 507, 510, 511]
+NOTICE_CODES = [425, 510]
 
 
 class Page(HTMLParser):
@@ -51,6 +54,7 @@ def check(condition, message):
 translations = {lang: json.loads((ROOT / 'lang' / f'{lang}.json').read_text()) for lang in ('de', 'en')}
 codes = sorted(int(file.stem) for file in (ROOT / 'pages').glob('[0-9]*.php'))
 check([code for code in codes if code < 500] == CLIENT_CODES, '4xx coverage is incomplete')
+check([code for code in codes if code >= 500] == SERVER_CODES, '5xx coverage is incomplete')
 resources = set()
 for lang, strings in translations.items():
     headers = {'Accept-Language': lang}
@@ -58,7 +62,8 @@ for lang, strings in translations.items():
     check(status == 200, f'{lang}: gallery failed')
     links = [link.get('href') for link in Page(html).attrs('a')]
     check(all(links.count(f'/{code}') == 1 for code in codes), f'{lang}: gallery links missing or duplicated')
-    check(strings['pages']['425']['notice'] in html, f'{lang}: gallery availability notice missing')
+    for code in NOTICE_CODES:
+        check(strings['pages'][str(code)]['notice'] in html, f'{lang}/{code}: gallery status notice missing')
     for code in codes:
         page_strings = strings['pages'][str(code)]
         for key in ('title', 'h2', 'text', 'btn', 'info_link', 'modal_title', 'modal_html'):
@@ -77,11 +82,11 @@ for lang, strings in translations.items():
             check(len(ids) == len(set(ids)), f'{lang}{path}: duplicate IDs')
             check(all(id in ids for id in ('infoModal', 'openModalBtn', 'closeModalBtn')), f'{lang}{path}: missing modal controls')
             check(any(a.get('class') == 'btn' and a.get('href') == '/' for a in page.attrs('a')), f'{lang}{path}: broken home button')
-            if code in NEW_CODES:
+            if code in SCENE_CODES:
                 check('class="status-scene" aria-hidden="true"' in html, f'{lang}{path}: missing decorative scene')
                 check(all(id in ids for id in ('pupil-left', 'pupil-right')), f'{lang}{path}: missing animated pupils')
-            if code == 425:
-                check(strings['pages']['425']['notice'] in html, f'{lang}{path}: availability notice missing')
+            if code in NOTICE_CODES:
+                check(page_strings['notice'] in html, f'{lang}{path}: status notice missing')
             for link in page.attrs('link'):
                 if link.get('rel') == 'stylesheet':
                     resources.add(link['href'])
@@ -104,14 +109,20 @@ _, headers, _ = fetch('/406', {'Accept-Language': 'fr, de;q=0.9, en;q=0.5'})
 check(headers['Content-Language'] == 'de', 'Language negotiation failed')
 _, headers, _ = fetch('/406', {'Accept-Language': 'fr'})
 check(headers['Content-Language'] == 'en', 'Default language fallback failed')
-for path in ('/419', '/420', '/427', '/430', '/499', '/no-such-page'):
+for path in ('/419', '/420', '/427', '/430', '/499', '/509', '/512', '/599', '/no-such-page'):
     status, _, html = fetch(path)
     check(status == 404 and '<h1>404</h1>' in html, f'{path}: missing 404 fallback')
 
 apache = dict(re.findall(r'^ErrorDocument (\d+) (\S+)$', (ROOT / '.htaccess').read_text(), re.M))
-for code in CLIENT_CODES:
-    expected = '/notfound' if code == 404 else f'/{code}'
-    check(apache.get(str(code)) == expected, f'{code}: missing Apache error mapping')
+# Apache intentionally maps only selected errors (see the server configuration).
+# Verify those targets without requiring an ErrorDocument entry for gallery pages.
+check(apache.get('404') == '/notfound', 'Missing Apache 404 fallback')
+for code, target in apache.items():
+    check(int(code) in codes, f'{code}: Apache mapping has no gallery page')
+    expected = '/notfound' if code == '404' else f'/{code}'
+    check(target == expected, f'{code}: wrong Apache error target')
+    status, _, _ = fetch(target)
+    check(status == 200, f'{code}: Apache error target is not reachable')
 
-print(f'Passed: {len(codes)} pages × 2 languages × 2 URL formats; {len(CLIENT_CODES)} 4xx codes complete.')
+print(f'Passed: {len(codes)} pages × 2 languages × 2 URL formats; {len(CLIENT_CODES)} 4xx and {len(SERVER_CODES)} 5xx codes complete.')
 print('Passed: gallery, translations, assets, language switch/cookies, fallback routes and Apache mappings.')

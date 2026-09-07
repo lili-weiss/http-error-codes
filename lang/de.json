@@ -2,7 +2,7 @@
     "common": {
         "lang_label": "Sprache",
         "meta_description": "Willkommen in der Monster-Galerie! Hier findest du eine Übersicht aller Fehlerseiten, die unser kleines Monster gestaltet hat. Klicke auf einen Button, um die jeweilige Fehlerseite zu besuchen und entdecke die Abenteuer unseres freundlichen Monsters. Keine Sorge, alle Seiten sind mit viel Liebe gestaltet!",
-        "keywords": "Monster-Galerie, Fehlerseiten, HTTP-Statuscodes, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 421, 422, 423, 424, 425, 426, 428, 429, 431, 451, 500, 501, 502, 503, 504, 508"
+        "keywords": "Monster-Galerie, Fehlerseiten, HTTP-Statuscodes, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 421, 422, 423, 424, 425, 426, 428, 429, 431, 451, 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, 511"
     },
     "pages": {
         "home": {
@@ -401,6 +401,39 @@
             "modal_title": "Was bedeutet \"504 Gateway Timeout\"?",
             "modal_html": "<p>Ein 504-Fehler tritt auf, wenn der Server, den du kontaktierst (das Gateway), zu lange auf eine Antwort eines anderen Servers im Hintergrund warten musste, um deine Anfrage zu bearbeiten. Der erste Server hat schließlich die Geduld verloren und die Verbindung getrennt.</p><ul><li>Der andere Server ist aktuell stark überlastet oder wird gerade gewartet.</li><li>Eine Datenbank im Hintergrund läuft viel zu langsam.</li><li>Netzwerkprobleme zwischen den Servern verhindern eine rechtzeitige Kommunikation.</li></ul><p><strong>Was kannst du tun?</strong><br>Leider liegt das Problem nicht bei dir. Die beste Lösung ist hier Geduld. Oft handelt es sich um ein temporäres Problem, das in wenigen Minuten behoben ist. Versuche einfach, die Seite neu zu laden!</p>"
         },
+        "505": {
+            "title": "Auf der falschen HTTP-Wellenlänge! 505 - HTTP Version Not Supported",
+            "h2": "Auf der falschen HTTP-Wellenlänge!",
+            "text": [
+                "Unser kleines Funk-Monster hört nur „Biep, brzzzt, HTTP/3“. In seinem Handbuch steht aber HTTP/1.1. Lauter sprechen hilft leider nicht, wenn beide einen anderen Protokoll-Dialekt benutzen!"
+            ],
+            "btn": "Zurück auf Empfang",
+            "info_link": "Was bedeutet 505?",
+            "modal_title": "Was bedeutet „505 HTTP Version Not Supported“?",
+            "modal_html": "<p>Der Server unterstützt die HTTP-Hauptversion deiner Anfrage nicht oder lehnt ihre Verwendung ab. Gemeint ist die Version des Übertragungsprotokolls, nicht das Format einer Datei oder die Version der Website.</p><p><strong>Was kannst du tun?</strong><br>Bei einem eigenen Client: Prüfe, welche HTTP-Versionen Client, Server und beteiligte Proxys unterstützen, und verwende eine gemeinsame Version. Als Besucher kannst du den Betreiber informieren. Ein Update der beteiligten Software oder eine korrigierte Serverkonfiguration kann nötig sein.</p>"
+        },
+        "506": {
+            "title": "Zur Auswahl steht: noch mehr Auswahl! 506 - Variant Also Negotiates",
+            "h2": "Zur Auswahl steht: noch mehr Auswahl!",
+            "text": [
+                "Unser kleines Kellner-Monster serviert dir die ausgewählte Speisekarte. Darin steht allerdings nur, welche Speisekarte du als Nächstes wählen sollst. Die Verhandlungen laufen blendend. Das Essen kommt nie."
+            ],
+            "btn": "Zurück von der Speisekarte",
+            "info_link": "Was bedeutet 506?",
+            "modal_title": "Was bedeutet „506 Variant Also Negotiates“?",
+            "modal_html": "<p>Bei der transparenten Inhaltsaushandlung soll der Server eine passende Variante auswählen, etwa eine Sprachversion. Die ausgewählte Variante ist jedoch selbst wieder für diese Aushandlung konfiguriert. Damit fehlt ein gültiger Endpunkt, der den eigentlichen Inhalt liefert.</p><p><strong>Was kannst du tun?</strong><br>Als Besucher kannst du den Betreiber informieren. Dieser muss die Varianten-Konfiguration so korrigieren, dass die Auswahl auf eine konkrete Ressource zeigt. Der Fehler liegt in der Serverkonfiguration.</p>"
+        },
+        "507": {
+            "title": "Der Dateikoffer platzt aus allen Nähten! 507 - Insufficient Storage",
+            "h2": "Der Dateikoffer platzt aus allen Nähten!",
+            "text": [
+                "Unser kleines Monster drückt mit beiden Händen auf den Koffer. Noch eine Datei müsste doch … nein. Der Server hat keinen Platz mehr. Selbst die Notfall-Sockenschublade ist voll!"
+            ],
+            "btn": "Zurück zur Gepäckablage",
+            "info_link": "Was bedeutet 507?",
+            "modal_title": "Was bedeutet „507 Insufficient Storage“?",
+            "modal_html": "<p>Der Server kann die Informationen nicht speichern, die für die Ausführung deiner Anfrage nötig wären. Der Status stammt aus WebDAV und beschreibt einen vorübergehenden Speicherengpass auf der Serverseite, zum Beispiel durch vollen Speicherplatz oder ein ausgeschöpftes Kontingent.</p><p><strong>Was kannst du tun?</strong><br>Der Betreiber muss Speicher freigeben, das Kontingent prüfen oder zusätzliche Kapazität bereitstellen. Versuche deine Aktion nach der Behebung erneut. Freier Platz auf deinem eigenen Gerät löst den Engpass des Servers nicht.</p>"
+        },
         "508": {
             "title": "Endlosschleife! 508 - Loop Detected",
             "h2": "Endlosschleife entdeckt!",
@@ -411,6 +444,29 @@
             "info_link": "Was ist eine Endlosschleife?",
             "modal_title": "Was bedeutet \"508 Loop Detected\"?",
             "modal_html": "<p>Ein 508-Fehler passiert, wenn der Server bei der Verarbeitung deiner Anfrage in einen endlosen Kreislauf (Loop) gerät und diese Kette automatisch abbricht, um nicht komplett abzustürzen.</p><ul><li><strong>Redirect Loop:</strong> Seite A leitet automatisch auf Seite B um, und Seite B leitet sofort wieder auf Seite A zurück.</li><li>Die Serverkonfiguration (z. B. `.htaccess`) enthält einen sich selbst wiederholenden oder fehlerhaften Befehl.</li></ul><p><strong>Was kannst du tun?</strong><br>Da Weiterleitungen oft in deinem Browser-Cache gespeichert werden, hilft es manchmal, die <strong>Cookies und den Cache zu leeren</strong>. Hilft das nicht, liegt ein Konfigurationsfehler beim Website-Betreiber vor.</p>"
+        },
+        "510": {
+            "title": "Das Erweiterungsstück fehlt! 510 - Not Extended",
+            "h2": "Das Erweiterungsstück fehlt!",
+            "text": [
+                "Unser kleines Bastel-Monster hat den HTTP-Baukasten fast fertig. Fast. Für diese Anfrage fehlt noch das vorgeschriebene Erweiterungsstück – und die Anleitung dafür liegt schon im Technikmuseum!"
+            ],
+            "btn": "Zurück an den Basteltisch",
+            "info_link": "Was bedeutet 510?",
+            "modal_title": "Was bedeutet „510 Not Extended“?",
+            "modal_html": "<p>Dieser historische Status stammt aus dem HTTP Extension Framework. Die Anfrage erfüllt die Erweiterungsanforderungen für den Zugriff auf die Ressource nicht. Das kann beispielsweise eine fehlende Erweiterungsdeklaration oder eine nicht unterstützte verpflichtende Erweiterung betreffen.</p><p><strong>Was kannst du tun?</strong><br>Bei einem älteren System sollte der Betreiber die verlangten Erweiterungen und ihre Unterstützung prüfen. Es geht um HTTP-Erweiterungen, nicht um eine Browser-Erweiterung, die du installieren sollst.</p><p><strong>Veraltet:</strong> Das zugrunde liegende Experiment wurde als historisch eingestuft; die IANA führt 510 inzwischen als „Obsoleted“. Hier bleibt es der Vollständigkeit halber in der Galerie.</p>",
+            "notice": "Veraltet · historischer Statuscode"
+        },
+        "511": {
+            "title": "WLAN da. Internet noch nicht. 511 - Network Authentication Required",
+            "h2": "WLAN da. Internet noch nicht.",
+            "text": [
+                "Unser kleines Monster hat vollen WLAN-Empfang und wedelt begeistert mit seinem Zugangszettel. Doch das Netzwerk möchte erst eine Anmeldung sehen. Vier Balken sind eben noch keine Eintrittskarte!"
+            ],
+            "btn": "Zurück vor das WLAN-Tor",
+            "info_link": "Was bedeutet 511?",
+            "modal_title": "Was bedeutet „511 Network Authentication Required“?",
+            "modal_html": "<p>Das Netzwerk verlangt eine Anmeldung, bevor es den Internetzugang freigibt. Typisch ist ein vorgeschaltetes Anmeldeportal im Hotel, am Flughafen oder im Gäste-WLAN. Die Antwort stammt dabei von einer Zugangskontrolle im Netzwerk und nicht von der eigentlich aufgerufenen Website.</p><p><strong>Was kannst du tun?</strong><br>Öffne die Anmeldeseite über den WLAN-Anmeldehinweis deines Geräts und schließe die Anmeldung oder die Bestätigung der Nutzungsbedingungen ab. Wenn das nicht klappt, hilft der Netzwerkbetreiber. Deine Zugangsdaten zur Zielwebsite sind hier nicht gemeint.</p>"
         }
     }
 }
