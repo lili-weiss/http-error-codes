@@ -1,9 +1,34 @@
 <?php
-// Startseite: Monster-Galerie mit Übersicht aller Fehlerseiten.
-// Neue Fehlerseite hinzufügen: pages/<code>.php anlegen, Code+Name hier eintragen,
+// Startseite: Monster-Galerie mit Übersicht aller HTTP-Statusseiten.
+// Neue Statusseite hinzufügen: pages/<code>.php anlegen, Code+Name hier eintragen,
 // Texte in lang/de.json + lang/en.json ergänzen.
 
 $codes = [
+    100 => 'Continue',
+    101 => 'Switching Protocols',
+    102 => 'Processing',
+    103 => 'Early Hints',
+    104 => 'Upload Resumption Supported',
+    200 => 'OK',
+    201 => 'Created',
+    202 => 'Accepted',
+    203 => 'Non-Authoritative Information',
+    204 => 'No Content',
+    205 => 'Reset Content',
+    206 => 'Partial Content',
+    207 => 'Multi-Status',
+    208 => 'Already Reported',
+    226 => 'IM Used',
+    300 => 'Multiple Choices',
+    301 => 'Moved Permanently',
+    302 => 'Found',
+    303 => 'See Other',
+    304 => 'Not Modified',
+    305 => 'Use Proxy',
+    306 => '(Unused)',
+    307 => 'Temporary Redirect',
+    308 => 'Permanent Redirect',
+
     400 => 'Bad Request',
     401 => 'Unauthorized',
     402 => 'Payment Required',
@@ -59,6 +84,7 @@ return [
         }
 
         .error-container {
+            box-sizing: border-box;
             background-color: rgba(255, 255, 255, 0.5);
             padding: 50px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
@@ -105,7 +131,15 @@ return [
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 15px;
-            margin-top: 40px;
+            margin-top: 18px;
+        }
+
+        .status-group { margin-top: 40px; text-align: left; }
+        .status-group h2 { margin: 0; font-size: 1.3rem; color: #64748b; }
+        @media (max-width: 480px) {
+            .error-container { padding: 32px 20px; }
+            .grid-container { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+            .status-btn { padding: 16px 8px; overflow-wrap: anywhere; }
         }
 
         .status-btn {

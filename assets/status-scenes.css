@@ -1,0 +1,87 @@
+/* Props for informational, successful and redirection status monsters.
+   The pink monster, stage, responsive sizing and motion preferences are shared
+   with the existing error scenes. All props are decorative. */
+.status-scene .mouth { border: 4px solid #333; border-top: 0; border-radius: 0 0 50px 50px; }
+.status-scene .hand-left { top: 157px; left: 12px; }
+.status-scene .hand-right { top: 157px; right: 12px; }
+.status-scene .prop { font-family: 'Segoe UI', sans-serif; }
+.status-scene .caption { position: absolute; top: -48px; left: 20px; width: 160px; color: #64748b; font-size: 15px; font-weight: 800; letter-spacing: 2px; }
+.status-scene .spark { position: absolute; color: #fbbf24; font-size: 30px; top: -25px; right: -5px; animation: question-drift 3s ease-in-out infinite; }
+/* 100: permission to send the rest of the request. */
+.go-flag { left: -3px; top: -15px; width: 7px; height: 185px; background: #a67c52; border-radius: 4px; transform: rotate(-12deg); }
+.go-flag::before { content: '✓'; position: absolute; top: 0; left: 7px; width: 70px; height: 50px; border-radius: 2px 14px 14px 2px; background: #86efac; color: #166534; font-size: 36px; text-align: center; }
+/* 101: two different protocols joined by a cable. */
+.protocol { top: -40px; width: 75px; height: 35px; padding: 7px 0; border-radius: 10px; background: #dbeafe; border: 2px solid #93c5fd; }
+.protocol.old { left: 0; }.protocol.new { right: 0; background: #d1fae5; border-color: #6ee7b7; }
+.protocol-wire { left: 72px; top: -26px; width: 56px; height: 43px; border: 6px solid #64748b; border-top: 0; border-radius: 0 0 25px 25px; }
+.protocol-switch { left: 72px; top: 155px; padding: 6px 12px; font-size: 24px; background: #fef3c7; border-radius: 10px; color: #92400e; }
+/* 102: a working gearbox. */
+.gear { width: 66px; height: 66px; top: 137px; left: 30px; border: 12px dashed #94a3b8; background: #e2e8f0; border-radius: 50%; animation: status-spin 9s linear infinite; }
+.gear::after { content: ''; position: absolute; inset: 9px; border-radius: 50%; background: #64748b; }
+.gear.small { width: 54px; height: 54px; top: 164px; left: 97px; border-color: #a78bfa; animation-direction: reverse; }
+@keyframes status-spin { to { transform: rotate(360deg); } }
+/* 103: advance notes before the full response. */
+.hint-note { width: 66px; height: 52px; padding-top: 13px; top: -35px; left: -8px; transform: rotate(-14deg); animation: question-drift 4s ease-in-out infinite; }
+.hint-note.second { left: 142px; top: -20px; animation-delay: -2s; background: #fef3c7; }
+.hint-envelope { left: 43px; top: 152px; width: 114px; height: 63px; background: #dbeafe; border: 3px solid #93c5fd; border-radius: 6px; }
+.hint-envelope::before { content: ''; position: absolute; inset: 0; background: #bfdbfe; clip-path: polygon(0 0,100% 0,50% 65%); }
+/* 104: upload progress with a bookmark at the resume point. */
+.upload-parcel { top: 150px; left: 35px; width: 130px; height: 65px; background: #d6b18b; border: 3px solid #a67c52; border-radius: 6px; }
+.upload-track { position: absolute; left: 12px; right: 12px; top: 25px; height: 12px; background: #f5e8da; border-radius: 8px; }
+.upload-track::before { content: ''; display: block; width: 60%; height: 100%; background: #6ee7b7; border-radius: inherit; }
+.upload-bookmark { position: absolute; left: 67px; top: -15px; width: 23px; height: 45px; background: #a78bfa; clip-path: polygon(0 0,100% 0,100% 100%,50% 75%,0 100%); }
+/* 200: a successful check, 201: a newly created gift. */
+.success-medal { left: 64px; top: 143px; width: 74px; height: 74px; border: 5px solid #6ee7b7; border-radius: 50%; background: #ecfdf5; color: #047857; font-size: 49px; line-height: 62px; box-shadow: 0 4px 8px #33415515; }
+.gift { left: 48px; top: 150px; width: 104px; height: 70px; background: #c4b5fd; border: 3px solid #a78bfa; border-radius: 6px; }
+.gift::before { content: ''; position: absolute; width: 20px; height: 100%; left: 39px; background: #fef3c7; }
+.gift::after { content: ''; position: absolute; top: -9px; left: -6px; width: 110px; height: 14px; border-radius: 4px; background: #ddd6fe; }
+.gift-bow { position: absolute; top: -30px; left: 22px; width: 52px; height: 23px; border: 6px solid #fcd34d; border-radius: 50% 50% 0 0; }
+/* 202: queue ticket and clock. */
+.queue-ticket { left: 47px; top: 145px; width: 106px; height: 75px; padding: 12px 0; border-style: dashed !important; font-size: 26px !important; transform: rotate(-6deg); }
+.queue-ticket small { display: block; font-size: 11px; letter-spacing: 3px; }
+.queue-clock { width: 46px; height: 46px; border: 4px solid #a78bfa; border-radius: 50%; background: #faf5ff; top: -35px; left: 142px; }
+.queue-clock::before { content: ''; position: absolute; width: 3px; height: 15px; background: #64748b; left: 18px; top: 5px; }
+.queue-clock::after { content: ''; position: absolute; width: 12px; height: 3px; background: #64748b; left: 18px; top: 18px; }
+/* 203: edited document and highlighter. */
+.edited-sheet { top: 137px; left: 49px; width: 100px; height: 82px; padding: 16px 12px; transform: rotate(-5deg); }
+.edited-sheet i { display: block; height: 5px; margin: 6px 0; background: #cbd5e1; }.edited-sheet i:nth-child(2) { background: #f9a8d4; height: 10px; }
+.highlighter { left: 146px; top: 123px; width: 15px; height: 78px; background: #f472b6; border-radius: 4px; transform: rotate(25deg); border-bottom: 12px solid #831843; }
+/* 204: visibly empty open box. */
+.empty-box { left: 44px; top: 162px; width: 112px; height: 57px; background: #d6b18b; border: 3px solid #a67c52; border-radius: 3px; }
+.empty-box::before { content: ''; position: absolute; left: -3px; top: -23px; width: 106px; height: 23px; background: #f5e8da; border: 3px solid #a67c52; border-radius: 50%; }
+.empty-box::after { content: ''; position: absolute; top: -17px; left: -24px; width: 36px; height: 25px; background: #e7c7a5; border: 2px solid #a67c52; transform: rotate(-25deg); }
+/* 205: cleaned board with eraser. */
+.reset-board { left: 28px; top: 136px; width: 145px; height: 84px; border: 7px solid #b99170; border-radius: 7px; background: #52776c; color: #e2e8f0; font-size: 43px; line-height: 68px; }
+.eraser { top: 177px; left: 134px; width: 40px; height: 22px; background: #fef3c7; border-bottom: 7px solid #64748b; border-radius: 4px; transform: rotate(-20deg); }
+/* 206: one slice separated from the rest. */
+.data-cake { top: 143px; left: 44px; width: 92px; height: 80px; border-radius: 50%; background: conic-gradient(transparent 0 75deg,#fbcfe8 75deg 360deg); border-bottom: 8px solid #c4b5fd; }
+.cake-slice { left: 126px; top: 139px; width: 54px; height: 54px; background: #fbcfe8; clip-path: polygon(0 100%,0 0,100% 26%); transform: rotate(10deg); border-right: 8px solid #c4b5fd; }
+/* 207 and 208: individual outcomes and a suppressed duplicate. */
+.result-list { left: 51px; top: 129px; width: 99px; height: 99px; padding: 9px 13px; text-align: left !important; }
+.result-list span { display: block; color: #059669; font-size: 18px; border-bottom: 2px solid #e2e8f0; }.result-list span:nth-child(2) { color: #d97706; }
+.duplicate { left: 35px; top: 143px; width: 80px; height: 72px; padding-top: 21px; transform: rotate(-12deg); }
+.duplicate.second { left: 89px; top: 151px; transform: rotate(12deg); background: #ede9fe; }
+.duplicate-stamp { top: 174px; left: 101px; color: #7c3aed; border: 3px solid #a78bfa; border-radius: 5px; font-size: 28px; line-height: 32px; width: 46px; transform: rotate(-14deg); background: #faf5ff; }
+/* 226: the missing delta fits into the existing puzzle. */
+.puzzle-base { left: 43px; top: 151px; width: 92px; height: 70px; background: #93c5fd; border: 3px solid #60a5fa; border-radius: 8px; }
+.puzzle-base::after { content: ''; position: absolute; right: -3px; top: 18px; width: 23px; height: 26px; background: #fffdf5; border-radius: 50% 0 0 50%; }
+.delta-piece { left: 144px; top: 137px; width: 43px; height: 59px; background: #fde68a; border: 3px solid #fbbf24; border-radius: 6px; transform: rotate(12deg); color: #92400e; padding-top: 15px; }
+.delta-piece::before { content: ''; position: absolute; left: -18px; top: 17px; width: 21px; height: 23px; border-radius: 50%; background: #fde68a; }
+/* Direction signs and moving luggage for 3xx. */
+.route-post { top: -49px; left: 96px; height: 83px; width: 8px; background: #b99170; border-radius: 4px; z-index: 0 !important; }
+.route-sign { top: -51px; left: 39px; width: 126px; height: 34px; padding: 5px 15px 5px 5px; background: #bfdbfe; clip-path: polygon(0 0,85% 0,100% 50%,85% 100%,0 100%); }
+.route-sign.alt { top: -14px; left: 5px; background: #ddd6fe; clip-path: polygon(15% 0,100% 0,100% 100%,15% 100%,0 50%); padding: 5px 5px 5px 15px; }
+.moving-box { left: 43px; top: 149px; width: 114px; height: 72px; background: #d6b18b; border: 3px solid #a67c52; border-radius: 5px; padding-top: 34px; }
+.moving-box::before { content: ''; position: absolute; top: 0; left: 44px; height: 29px; width: 20px; background: #fef3c7; }
+.suitcase { left: 45px; top: 153px; width: 110px; height: 66px; border-radius: 10px; border: 4px solid #818cf8; background: #c7d2fe; padding-top: 20px; }
+.suitcase::before { content: ''; position: absolute; top: -18px; left: 33px; width: 30px; height: 13px; border: 5px solid #818cf8; border-bottom: 0; border-radius: 8px 8px 0 0; }
+.sealed { background: #bbf7d0; border-color: #6ee7b7; }.sealed::before { background: #fef3c7; }
+.suitcase.sealed::before { background: transparent; border-color: #6ee7b7; }
+.parcel-seal { position: absolute; right: -10px; bottom: -10px; background: #fef3c7; border: 3px solid #fcd34d; border-radius: 50%; width: 30px; height: 30px; font-size: 18px; line-height: 26px; color: #92400e; }
+.collection-slip { top: 141px; left: 51px; width: 96px; height: 78px; padding-top: 13px; transform: rotate(-8deg); }.collection-slip span { display: block; font-size: 25px; color: #8b5cf6; }
+.cache-drawer { top: 146px; left: 39px; width: 122px; height: 73px; background: #bfdbfe; border: 4px solid #93c5fd; border-radius: 7px; padding-top: 23px; }
+.cache-drawer::before { content: ''; position: absolute; top: 7px; left: 41px; width: 32px; height: 6px; border-radius: 4px; background: #64748b; }
+.cache-check { top: 132px; left: 138px; color: #059669; font-size: 35px; background: #ecfdf5; border-radius: 50%; width: 42px; height: 42px; }
+.museum-frame { top: 133px; left: 32px; width: 136px; height: 88px; background: #fef3c7; border: 8px ridge #d6b18b; border-radius: 4px; padding-top: 8px; color: #78716c !important; }.museum-frame span { display: block; font-size: 24px; }
+.reserved-chair { top: 135px; left: 62px; width: 76px; height: 66px; background: #ddd6fe; border: 5px solid #a78bfa; border-radius: 14px 14px 3px 3px; padding-top: 17px; }
+.reserved-chair::before,.reserved-chair::after { content: ''; position: absolute; bottom: -26px; height: 26px; width: 7px; background: #a78bfa; }.reserved-chair::before { left: 0; }.reserved-chair::after { right: 0; }

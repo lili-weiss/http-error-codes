@@ -1,18 +1,25 @@
 {
     "common": {
         "lang_label": "Language",
-        "meta_description": "Welcome to the Monster Gallery! Here you'll find an overview of all the error pages our little monster has designed. Click a button to visit each error page and discover the adventures of our friendly monster. Don't worry, every page was crafted with lots of love!",
-        "keywords": "Monster Gallery, error pages, HTTP status codes, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 421, 422, 423, 424, 425, 426, 428, 429, 431, 451, 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, 511"
+        "meta_description": "HTTP status codes from 1xx to 5xx: Our little monster explains interim responses, successes, redirects and errors with humour and clear technical information.",
+        "keywords": "Monster Gallery, error pages, HTTP status codes, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 421, 422, 423, 424, 425, 426, 428, 429, 431, 451, 500, 501, 502, 503, 504, 505, 506, 507, 508, 510, 511, 100, 101, 102, 103, 104, 200, 201, 202, 203, 204, 205, 206, 207, 208, 226, 300, 301, 302, 303, 304, 305, 306, 307, 308"
     },
     "pages": {
         "home": {
-            "title": "Monster Gallery | Error Pages Overview",
+            "title": "Monster Gallery | HTTP Status Codes",
             "h1": "Wel&shy;come!",
             "intro": [
-                "Our little monster is overjoyed that you're here. Normally it's not a good sign when you see it and its error pages - but here in its gallery you can browse all of its adventures at your leisure.",
-                "Just click one of the buttons to visit the corresponding error page. Don't worry, the monster designed every page with lots of love - even if they can be a little cheeky sometimes!",
-                "On each error page, the button brings you right back here."
-            ]
+                "Our little monster is so happy you are here. It does more than errors: it celebrates success, points out new routes and sometimes waves with an interim response.",
+                "Choose a status code to discover its next adventure. Enjoy the short monster story, then open the info link for the technical explanation.",
+                "The button on every status page brings you back here."
+            ],
+            "groups": {
+                "1": "1xx · Informational",
+                "2": "2xx · Success",
+                "3": "3xx · Redirection",
+                "4": "4xx · Client errors",
+                "5": "5xx · Server errors"
+            }
         },
         "notfound": {
             "title": "Oh no! 404 - Page Not Found",
@@ -467,6 +474,274 @@
             "info_link": "What does 511 mean?",
             "modal_title": "What does “511 Network Authentication Required” mean?",
             "modal_html": "<p>The network requires authentication before granting internet access. A login portal at a hotel, airport or guest Wi-Fi network is a typical example. The response comes from a network access control system, not from the website you intended to visit.</p><p><strong>What can you do?</strong><br>Open the login page using your device's Wi-Fi sign-in prompt, then complete the login or accept the network's terms. If that fails, contact the network operator. Your login credentials for the destination website are not what is needed here.</p>"
+        },
+        "100": {
+            "title": "Green light for your data! 100 - Continue",
+            "h2": "Green light for your data!",
+            "text": [
+                "Our little monster is waving the green flag. The request looks good so far – now the big suitcase of data may follow. Please do not throw it all at once!"
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 100 mean?",
+            "modal_title": "What does “100 Continue” mean?",
+            "modal_html": "<p>The server has received the initial part of the request without rejecting it. The client may send the request body, for example after an Expect: 100-continue header. This interim response does not confirm success; a final response follows.</p>"
+        },
+        "101": {
+            "title": "New protocol, same monster! 101 - Switching Protocols",
+            "h2": "New protocol, same monster!",
+            "text": [
+                "Our little monster is switching cables: HTTP a moment ago, another protocol now. It even brought the right adapter. Definitely not the one from the kitchen drawer."
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 101 mean?",
+            "modal_title": "What does “101 Switching Protocols” mean?",
+            "modal_html": "<p>The server accepts the protocol switch requested by the client through the Upgrade mechanism. The connection then continues using the agreed protocol, as in a WebSocket handshake over HTTP/1.1. This is not a redirect to another website.</p>"
+        },
+        "102": {
+            "title": "The gears are already turning! 102 - Processing",
+            "h2": "The gears are already turning!",
+            "text": [
+                "Our little workshop monster is cranking away at your request. It has not finished, but it is definitely awake. That purring noise is the gearbox. Honestly."
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 102 mean?",
+            "modal_title": "What does “102 Processing” mean?",
+            "modal_html": "<p>This interim response from the original WebDAV specification indicates that a request was received and is still being processed. The final response determines the outcome. The newer WebDAV specification, RFC 4918, did not retain 102.</p>",
+            "notice": "Historical · original WebDAV specification"
+        },
+        "103": {
+            "title": "A little hint before the reveal! 103 - Early Hints",
+            "h2": "A little hint before the reveal!",
+            "text": [
+                "Our little monster is peeking behind the curtain and handing out the first notes. The big answer is still putting its shoes on. The fonts can get a head start."
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 103 mean?",
+            "modal_title": "What does “103 Early Hints” mean?",
+            "modal_html": "<p>Before the final response, the server sends hints, commonly Link headers for preloading resources. A client can use these to fetch stylesheets early, for example. The hints do not guarantee the content or status of the final response.</p>"
+        },
+        "104": {
+            "title": "Your upload has a bookmark! 104 - Upload Resumption Supported",
+            "h2": "Your upload has a bookmark!",
+            "text": [
+                "Our little monster put a bookmark in the data parcel. If the upload trips, it need not start packing from sock number one. A suitcase with a resume button!"
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 104 mean?",
+            "modal_title": "What does “104 Upload Resumption Supported” mean?",
+            "modal_html": "<p>This provisionally registered interim response belongs to the resumable HTTP uploads draft. It signals support for resumption and can identify the upload resource via Location. It does not confirm a completed upload. IANA currently lists the registration as expiring on 13 November 2026; the mechanism is not yet a final standard.</p>",
+            "notice": "Provisional registration · until 2026-11-13"
+        },
+        "200": {
+            "title": "Everything is OK! 200 - OK",
+            "h2": "Everything is OK!",
+            "text": [
+                "Our little monster finished the request and is proudly holding up a giant check mark. No drama, no smoke, no missing page. Sometimes the internet simply works."
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 200 mean?",
+            "modal_title": "What does “200 OK” mean?",
+            "modal_html": "<p>The request succeeded. The meaning of the response depends on the method: GET normally returns the requested representation, while POST may return the result of processing. 200 indicates success.</p>"
+        },
+        "201": {
+            "title": "Ta-da! Something new is here! 201 - Created",
+            "h2": "Ta-da! Something new is here!",
+            "text": [
+                "Our little builder monster has assembled a brand-new resource. The ribbon is optional; the proud expression is not. Please do not mistake the fresh URL for glue."
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 201 mean?",
+            "modal_title": "What does “201 Created” mean?",
+            "modal_html": "<p>The request succeeded and created one or more resources, such as a new record. The primary resource is identified by the Location header when present, or otherwise by the request target URI.</p>"
+        },
+        "202": {
+            "title": "Your request has a queue ticket! 202 - Accepted",
+            "h2": "Your request has a queue ticket!",
+            "text": [
+                "Our little monster accepted your job and issued a very official ticket. That does not mean it is done. Even monsters cannot stamp, perform magic and eat cookies at the same time."
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 202 mean?",
+            "modal_title": "What does “202 Accepted” mean?",
+            "modal_html": "<p>The request was accepted for processing, but processing has not finished and may not ultimately succeed. For asynchronous jobs, the response can point to a status resource where progress can be checked.</p>"
+        },
+        "203": {
+            "title": "A quick stop at the editing desk! 203 - Non-Authoritative Information",
+            "h2": "A quick stop at the editing desk!",
+            "text": [
+                "Our little editor monster has touched up the response on its way here. It arrived with a middle helper’s handiwork. Apparently pink highlighters were on sale."
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 203 mean?",
+            "modal_title": "What does “203 Non-Authoritative Information” mean?",
+            "modal_html": "<p>The request succeeded, but a transforming proxy modified the content of the origin server’s 200 response. This status identifies the intermediary’s transformation; it does not automatically mean the information is false or unsafe.</p>"
+        },
+        "204": {
+            "title": "Done. The box stays empty! 204 - No Content",
+            "h2": "Done. The box stays empty!",
+            "text": [
+                "Our little monster proudly presents: nothing. The work is done; there is just no content to send back. This is not a lost parcel. It is extremely economical confetti."
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 204 mean?",
+            "modal_title": "What does “204 No Content” mean?",
+            "modal_html": "<p>The request succeeded without response content, for example after an update or deletion. Headers may still carry metadata. An actual 204 response contains no body; this gallery page only explains its meaning.</p>"
+        },
+        "205": {
+            "title": "A clean slate for the next round! 205 - Reset Content",
+            "h2": "A clean slate for the next round!",
+            "text": [
+                "Our little monster processed your input and is wiping the board clean. Ready for another round! The chalk may stay; the old scribbles have clocked off."
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 205 mean?",
+            "modal_title": "What does “205 Reset Content” mean?",
+            "modal_html": "<p>The server fulfilled the request and asks the client to reset the originating document view, such as a form ready for another entry. The response must not contain content. The client is responsible for implementing the reset.</p>"
+        },
+        "206": {
+            "title": "One slice coming right up! 206 - Partial Content",
+            "h2": "One slice coming right up!",
+            "text": [
+                "Our little monster delivers exactly the requested slice of data cake. The rest stays in the fridge. You should not have to download an entire cake just to enjoy one slice."
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 206 mean?",
+            "modal_title": "What does “206 Partial Content” mean?",
+            "modal_html": "<p>The server fulfils a range request with one or more requested parts of a representation. Content-Range describes a single returned range; multiple ranges can use multipart/byteranges. This is useful for downloads and media.</p>"
+        },
+        "207": {
+            "title": "One request, many report cards! 207 - Multi-Status",
+            "h2": "One request, many report cards!",
+            "text": [
+                "Our little list monster graded every part separately. A check here, a problem there – one response with lots of little stories. Please read the small print too!"
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 207 mean?",
+            "modal_title": "What does “207 Multi-Status” mean?",
+            "modal_html": "<p>This WebDAV status packages multiple individual results in one response body, typically an XML multistatus element. Resources or properties may have different status codes. 207 alone does not mean that every operation succeeded.</p>"
+        },
+        "208": {
+            "title": "Already on the list! 208 - Already Reported",
+            "h2": "Already on the list!",
+            "text": [
+                "Our little monster found the same resource along another path and reached for its duplicate stamp. One full explanation is enough. Even monsters prefer not to do their homework twice."
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 208 mean?",
+            "modal_title": "What does “208 Already Reported” mean?",
+            "modal_html": "<p>208 is used inside a WebDAV multistatus response to PROPFIND. With multiple bindings to the same collection, it indicates that its members have already been listed, avoiding repeated enumeration. It is normally not the status of the entire HTTP response.</p>"
+        },
+        "226": {
+            "title": "Just the new puzzle pieces! 226 - IM Used",
+            "h2": "Just the new puzzle pieces!",
+            "text": [
+                "Our little monster delivers the changes instead of the whole construction kit again. You already have the old version. Fit a piece here, join a piece there – data puzzle complete."
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 226 mean?",
+            "modal_title": "What does “226 IM Used” mean?",
+            "modal_html": "<p>IM means Instance Manipulations. The server fulfilled a GET request with a representation produced by negotiated transformations. With delta encoding, the client combines the transmitted changes with an existing version. Headers such as A-IM and IM negotiate the mechanism.</p>"
+        },
+        "300": {
+            "title": "You get to choose! 300 - Multiple Choices",
+            "h2": "You get to choose!",
+            "text": [
+                "Our little signpost monster found several suitable destinations. Left? Right? It is holding up both signs just in case. No need to leave this decision to the dice."
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 300 mean?",
+            "modal_title": "What does “300 Multiple Choices” mean?",
+            "modal_html": "<p>The requested resource has several representations with their own addresses. The response can list alternatives for the user or client to select. A Location header can identify a preferred option. This is not a server error.</p>"
+        },
+        "301": {
+            "title": "The monster has moved house! 301 - Moved Permanently",
+            "h2": "The monster has moved house!",
+            "text": [
+                "Our little monster packed its boxes and handed back the old key. The new address is permanent. Cookie forwarding has already been arranged, of course."
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 301 mean?",
+            "modal_title": "What does “301 Moved Permanently” mean?",
+            "modal_html": "<p>The resource has a new permanent URI, normally supplied in Location. Links should be updated. Clients may historically change POST to GET when following this redirect; 308 is appropriate when the method must be preserved.</p>"
+        },
+        "302": {
+            "title": "Just visiting next door! 302 - Found",
+            "h2": "Just visiting next door!",
+            "text": [
+                "Our little monster packed a suitcase for a short visit. You can find it at another address for now. Its nameplate may stay on the old door."
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 302 mean?",
+            "modal_title": "What does “302 Found” mean?",
+            "modal_html": "<p>The resource is temporarily available at another URI, normally supplied in Location. Future requests should still use the original address. Clients may change POST to GET when redirecting; 307 explicitly preserves the method.</p>"
+        },
+        "303": {
+            "title": "Collect your answer at the next desk! 303 - See Other",
+            "h2": "Collect your answer at the next desk!",
+            "text": [
+                "Our little monster accepts the job and hands you a collection slip. The result is over there. Please do not order the same cake again at the second desk!"
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 303 mean?",
+            "modal_title": "What does “303 See Other” mean?",
+            "modal_html": "<p>Location points to another resource providing an indirect answer to the original request. After POST it is typically retrieved with GET, for example as a confirmation page. Unlike 307, this does not simply repeat the original POST and body at the new target.</p>"
+        },
+        "304": {
+            "title": "Your copy is still fresh! 304 - Not Modified",
+            "h2": "Your copy is still fresh!",
+            "text": [
+                "Our little archive monster checked: your stored copy is still good. It sends a check mark instead of another parcel. Recycling has never been this fluffy."
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 304 mean?",
+            "modal_title": "What does “304 Not Modified” mean?",
+            "modal_html": "<p>For a conditional GET or HEAD request, 304 indicates that the stored representation can be reused. The client may validate with If-None-Match or If-Modified-Since. The response has no body and does not redirect to another URL.</p>"
+        },
+        "305": {
+            "title": "This detour belongs in a museum! 305 - Use Proxy",
+            "h2": "This detour belongs in a museum!",
+            "text": [
+                "Our little museum monster points at an old proxy sign. Once upon a time, the route went through an intermediary. Today the sign gets dusted, not followed."
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 305 mean?",
+            "modal_title": "What does “305 Use Proxy” mean?",
+            "modal_html": "<p>This deprecated status originally required access through the proxy specified in Location. Automatic proxy configuration from a server response raised security concerns. 305 should not be used in new applications.</p>",
+            "notice": "Deprecated · do not use"
+        },
+        "306": {
+            "title": "No status is sitting here! 306 - (Unused)",
+            "h2": "No status is sitting here!",
+            "text": [
+                "Our little monster is guarding a reserved chair. The number is taken, but nobody is performing on stage. Even the internet is allowed to leave a seat empty."
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 306 mean?",
+            "modal_title": "What does “306 (Unused)” mean?",
+            "modal_html": "<p>306 is no longer used and remains reserved. The current HTTP specification gives it no active redirect function. This page documents the reserved number; it does not recommend using 306 as a custom status.</p>",
+            "notice": "Reserved · unused"
+        },
+        "307": {
+            "title": "A short detour, same luggage! 307 - Temporary Redirect",
+            "h2": "A short detour, same luggage!",
+            "text": [
+                "Our little courier monster is taking a temporary detour. The job and the data parcel stay exactly the same. A trial move – no unpacking along the way, please!"
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 307 mean?",
+            "modal_title": "What does “307 Temporary Redirect” mean?",
+            "modal_html": "<p>The request is temporarily redirected to the URI in Location. Automatic redirection must preserve the HTTP method: POST remains POST and its body is retained. Future requests should continue to use the original URI.</p>"
+        },
+        "308": {
+            "title": "New address, same delivery! 308 - Permanent Redirect",
+            "h2": "New address, same delivery!",
+            "text": [
+                "Our little courier monster is moving for good and taking the sealed data parcel along. New door, same job. Even the “Do not shake” sticker gets to stay."
+            ],
+            "btn": "Back to the monster gallery",
+            "info_link": "What does 308 mean?",
+            "modal_title": "What does “308 Permanent Redirect” mean?",
+            "modal_html": "<p>The resource has a new permanent URI, normally supplied in Location. Automatic redirection preserves the method and request body, unlike the possible POST-to-GET change with 301. Future references should use the new target.</p>"
         }
     }
 }

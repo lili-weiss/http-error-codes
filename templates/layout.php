@@ -70,11 +70,17 @@
             <p class="subtitle"><?= $p ?></p>
 <?php endforeach; ?>
 
-            <div class="grid-container">
+<?php foreach (range(1, 5) as $group): ?>
+            <section class="status-group" aria-labelledby="group-<?= $group ?>">
+                <h2 id="group-<?= $group ?>"><?= e((string) t("pages.home.groups.$group")) ?></h2>
+                <div class="grid-container">
 <?php foreach ($page['codes'] ?? [] as $code => $name): ?>
+<?php if (intdiv((int) $code, 100) !== $group) continue; ?>
                 <a href="/<?= e((string) $code) ?>" class="status-btn"><strong><?= e((string) $code) ?></strong><span><?= e($name) ?></span><?php if ($notice = t("pages.$code.notice")): ?><small class="status-notice"><?= e($notice) ?></small><?php endif; ?></a>
 <?php endforeach; ?>
-            </div>
+                </div>
+            </section>
+<?php endforeach; ?>
 
             <p class="footer">Copyright &copy; 2026 Lili Weiss (<a href="https://goli.li/me" target="_blank" rel="noopener noreferrer">https://goli.li/me</a>). All rights reserved.</p>
 <?php else: ?>
